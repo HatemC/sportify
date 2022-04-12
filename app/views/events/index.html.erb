@@ -1,5 +1,5 @@
 <h1>index</h1>
-<div>
+  <div>
   <%= form_tag(events_path, method: :get) do %>
 
    <div class='form-element'>
@@ -9,11 +9,6 @@
 
     <div class='form-element'>
       <%= label_tag('Level') %>
-      <%= select_tag(:level, options_for_select([ ['Beginner', 'Beginner'], ['Intermediate', 'Intermediate'], ['Advanced', 'Advanced']])) %>
-    </div>
-
-    <div class='form-element'>
-      <%= label_tag('Data') %>
       <%= select_tag(:level, options_for_select([ ['Beginner', 'Beginner'], ['Intermediate', 'Intermediate'], ['Advanced', 'Advanced']])) %>
     </div>
 

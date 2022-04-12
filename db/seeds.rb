@@ -44,9 +44,14 @@ puts 'Creating 20 events...'
     user: User.all.sample,
     sport: sport.sample,
     level: level.sample,
-
+    sport:  sport.sample,
+    date: Date.today+rand(90),
     duration: duration.sample,
-    date: Date.today+rand(90)
+    # address: "#{Faker::Address.building_number} #{Faker::Address.street_name}, #{Faker::Address.country_by_code(code: 'FR')}",
   )
   event.save!
 end
+
+
+puts "#{Event.count} events created"
+
