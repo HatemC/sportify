@@ -21,12 +21,13 @@
           </li>
           <li class="nav-item dropdown">
             <%  if current_user.photo.key.nil? %>
-              <%= image_tag "default_profil.png", crop: :fill,  class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= image_tag "default_profil.png", crop: :fill,  class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% else  %>
-              <%= cl_image_tag current_user.photo.key, crop: :fill,  class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= cl_image_tag current_user.photo.key, crop: :fill,  class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end  %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-
+              <%= link_to "Update your profile", edit_user_registration_path , class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
