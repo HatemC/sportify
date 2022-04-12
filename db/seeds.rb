@@ -28,6 +28,7 @@ users_data['results'].each do |user_data|
     password: '123456',
     bio: bio.sample
   )
+
   user.save!
 end
 
@@ -37,11 +38,13 @@ duration = ['1 hour', '2 hour']
 
 puts 'Creating 20 events...'
 
+
 20.times do
   event = Event.new(
     user: User.all.sample,
     sport: sport.sample,
     level: level.sample,
+
     duration: duration.sample,
     date: Date.today+rand(90)
   )
