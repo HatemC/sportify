@@ -3,5 +3,6 @@ class ChatroomsController < ApplicationController
     @chatrooms = Chatroom.all
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
+    authorize @chatroom
   end
 end

@@ -26,31 +26,31 @@ users_data['results'].each do |user_data|
     password: '123456'
   )
 
-#  file = URI.open("#{user_data['picture']['large']}")
-#  user.photo.attach(io: file, filename: "#{user.first_name}.png", content_type: 'image/png')
+  file = URI.open("#{user_data['picture']['large']}")
+  user.photo.attach(io: file, filename: "#{user.first_name}.png", content_type: 'image/png')
   user.save
 end
 
 puts 'Creating 6 more users'
 alice = User.create!(first_name: 'Alice', last_name: 'Monet', address: '38 rue de verneuil paris', email: 'alice@gmail.com', password:'123456')
-#file = URI.open('http://ghost.skillshub.info/content/images/2017/01/profile-girl-square.png')
-# alice.photo.attach(io: file, filename: 'alice.png', content_type: 'image/png')
+file = URI.open('http://ghost.skillshub.info/content/images/2017/01/profile-girl-square.png')
+alice.photo.attach(io: file, filename: 'alice.png', content_type: 'image/png')
 
 jean = User.create!(first_name: 'Jean', last_name: 'Dupont', address: '24 rue de sevres paris', email: 'jean@gmail.com', password:'123456')
-# file = URI.open('https://media.istockphoto.com/photos/side-view-longbeard-business-man-portrait-picture-id1074638206?k=20&m=1074638206&s=612x612&w=0&h=ORoK2wMFc7AaE-femw7qRI1l5diwMHTqm4PeaKyTLo0=')
-# jean.photo.attach(io: file, filename: 'jean.png', content_type: 'image/png')
+file = URI.open('https://media.istockphoto.com/photos/side-view-longbeard-business-man-portrait-picture-id1074638206?k=20&m=1074638206&s=612x612&w=0&h=ORoK2wMFc7AaE-femw7qRI1l5diwMHTqm4PeaKyTLo0=')
+jean.photo.attach(io: file, filename: 'jean.png', content_type: 'image/png')
 
 chloe = User.create!(first_name: 'Chloe', last_name: 'Barbeau', address: '20 rue du store paris', email: 'chloe@gmail.com', password:'123456')
-# file = URI.open('https://media.istockphoto.com/photos/young-african-woman-smiling-at-sunset-picture-id969233490?k=20&m=969233490&s=612x612&w=0&h=jXLgjbu0CIWEohHgcx_ZHBhrcH3hNKcg7TVJgehndPg=')
-# chloe.photo.attach(io: file, filename: 'chloe.png', content_type: 'image/png')
+file = URI.open('https://media.istockphoto.com/photos/young-african-woman-smiling-at-sunset-picture-id969233490?k=20&m=969233490&s=612x612&w=0&h=jXLgjbu0CIWEohHgcx_ZHBhrcH3hNKcg7TVJgehndPg=')
+chloe.photo.attach(io: file, filename: 'chloe.png', content_type: 'image/png')
 
 jacques = User.create!(first_name: 'Jacques', last_name: 'Dupont', address: '24 rue du temple paris', email: 'jacques@gmail.com', password:'123456')
 caroline = User.create!(first_name: 'Caroline', last_name: 'Martin', address: '20 boulevard saint-germain 75006 paris', email: 'caroline@gmail.com', password:'123456')
 puts "#{User.count} users created"
 
 brianna = User.create!(first_name: 'Brianna', last_name: 'London', address: '8 rue de verneuil paris', email: 'brianna@gmail.com', password:'123456')
-#file = URI.open('https://media-exp1.licdn.com/dms/image/C5603AQEE2MXahFNkaw/profile-displayphoto-shrink_400_400/0/1517474598541?e=1651708800&v=beta&t=XHmnp9CtlvlFdeb7Tgk-Kqu8rYgqQhSRjlT7VAmgtCU')
-# brianna.photo.attach(io: file, filename: 'brianna.png', content_type: 'image/png')
+file = URI.open('https://media-exp1.licdn.com/dms/image/C5603AQEE2MXahFNkaw/profile-displayphoto-shrink_400_400/0/1517474598541?e=1651708800&v=beta&t=XHmnp9CtlvlFdeb7Tgk-Kqu8rYgqQhSRjlT7VAmgtCU')
+brianna.photo.attach(io: file, filename: 'brianna.png', content_type: 'image/png')
 
 
 level = ['Beginner', 'Intermediate', 'Advanced']
