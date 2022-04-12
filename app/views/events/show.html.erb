@@ -1,1 +1,12 @@
 <h1>show</h1>
+<div>Profile section</div>
+<div>
+  <h2>Event Section</h2>
+  <%= @event.sport %>
+  <%= @event.date %>
+  <%= @event.duration %>
+  <%= @event.level %>
+</div>
+
+<div class="btn-container">
+<%= link_to 'Back', events_path, class: "btn btn-primary" %>
