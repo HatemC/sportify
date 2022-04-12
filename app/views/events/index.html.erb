@@ -4,7 +4,7 @@
 
    <div class='form-element'>
       <%= label_tag('Sport') %>
-      <%= select_tag(:date, options_for_select([ ['Tennis', 'Tennis' ], ['Football', 'Football'], ['Yoga', 'Yoga'],['Soccer', 'Soccer'], ['Badminton', 'Badminton'], ['Running', 'Running']])) %>
+      <%= select_tag(:sport, options_for_select([ ['Tennis', 'Tennis' ], ['Football', 'Football'], ['Yoga', 'Yoga'],['Soccer', 'Soccer'], ['Badminton', 'Badminton'], ['Running', 'Running']])) %>
     </div>
 
     <div class='form-element'>
@@ -12,12 +12,17 @@
       <%= select_tag(:level, options_for_select([ ['Beginner', 'Beginner'], ['Intermediate', 'Intermediate'], ['Advanced', 'Advanced']])) %>
     </div>
 
-    <div class='form-element'>
-      <%= label_tag('Date') %>
-
-    </div>
     <div class=''>
       <%= submit_tag('Search', id:"submit-form", class: "btn btn-primary")  %>
     </div>
     <% end %>
+
+<% @users.each do |user| %>
+  <div >
+    <h2><strong>Name: </strong><%= user.first_name %></h2>
+      <p><strong>Address: </strong><%= user.address %> </p>
+      <p><strong>Bio: </strong><%= user.bio %> </p>
+
+    </div>
+<% end %>
 </div>
