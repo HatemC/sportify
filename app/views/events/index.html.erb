@@ -13,8 +13,10 @@
     </div>
 
     <div class='form-element'>
-      <%= label_tag('Data') %>
-      <%= select_tag(:level, options_for_select([ ['Beginner', 'Beginner'], ['Intermediate', 'Intermediate'], ['Advanced', 'Advanced']])) %>
+      <%= label_tag('Date') %>
+      <%= text_field_tag :date,
+      params[:date]
+      %>
     </div>
 
     <div class=''>
