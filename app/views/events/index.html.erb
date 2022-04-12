@@ -1,0 +1,23 @@
+<h1>index</h1>
+<div>
+  <%= form_tag(events_path, method: :get) do %>
+
+   <div class='form-element'>
+      <%= label_tag('Sport') %>
+      <%= select_tag(:date, options_for_select([ ['Tennis', 'Tennis' ], ['Football', 'Football'], ['Yoga', 'Yoga'],['Soccer', 'Soccer'], ['Badminton', 'Badminton'], ['Running', 'Running']])) %>
+    </div>
+
+    <div class='form-element'>
+      <%= label_tag('Level') %>
+      <%= select_tag(:level, options_for_select([ ['Beginner', 'Beginner'], ['Intermediate', 'Intermediate'], ['Advanced', 'Advanced'])) %>
+    </div>
+
+    <div class='form-element'>
+      <%= label_tag('Date') %>
+    #
+    </div>
+    <div class=''>
+      <%= submit_tag('Search', id:"submit-form", class: "btn btn-primary")  %>
+    </div>
+    <% end %>
+</div>
