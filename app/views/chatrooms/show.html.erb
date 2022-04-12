@@ -1,4 +1,4 @@
-
+<div class="container">
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
   <% @chatroom.messages.each do |message| %>
     <div class="message-container" id="message-<%= message.id %>">
@@ -15,4 +15,10 @@
       </p>
     </div>
     <% end %>
+</div>
+
+<%= simple_form_for [ @chatroom, @message ] do |f| %>
+  <%= f.input :content, label: false %>
+  <%= f.button :submit, "Send", class:'btn btn-primary' %>
+<% end %>
 </div>
