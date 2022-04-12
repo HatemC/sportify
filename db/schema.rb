@@ -27,8 +27,12 @@ ActiveRecord::Schema.define(version: 2022_04_11_143438) do
 
   create_table "chatrooms", force: :cascade do |t|
     t.bigint "user_id", null: false
+    t.bigint "sender_id"
+    t.bigint "recepient_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["recepient_id"], name: "index_chatrooms_on_recepient_id"
+    t.index ["sender_id"], name: "index_chatrooms_on_sender_id"
     t.index ["user_id"], name: "index_chatrooms_on_user_id"
   end
 
@@ -73,6 +77,8 @@ ActiveRecord::Schema.define(version: 2022_04_11_143438) do
   add_foreign_key "bookings", "events"
   add_foreign_key "bookings", "users"
   add_foreign_key "chatrooms", "users"
+  add_foreign_key "chatrooms", "users", column: "recepient_id"
+  add_foreign_key "chatrooms", "users", column: "sender_id"
   add_foreign_key "events", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
