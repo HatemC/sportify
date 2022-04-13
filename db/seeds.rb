@@ -48,13 +48,17 @@ puts 'Creating 20 events...'
     user: User.all.sample,
     sport: sport.sample,
     level: level.sample,
-    sport:  sport.sample,
     date: Date.today+rand(90),
     duration: duration.sample,
     address: "#{Faker::Address.building_number} #{Faker::Address.street_name}, #{Faker::Address.country_by_code(code: 'FR')}",
     # address: "#{Faker::Address.building_number} #{Faker::Address.street_name}, #{Faker::Address.country_by_code(code: 'FR')}",
   )
   event.save!
+end
+
+20.times do
+  chatroom = Chatroom.new(sender: User.all.sample, recepient: User.all.sample)
+  chatroom.save!
 end
 
 puts "#{Event.count} events created"
