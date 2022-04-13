@@ -4,7 +4,7 @@
   <%= event.sport %>
   <%= event.date %>
   <%= event.duration %>
-  <%= link_to 'Edit', edit_event_path(event.id), class: 'btn btn-primary' %>
+  <%= link_to '', edit_event_path(event.id), class: "fas fa-edit" %>
 
   <br>
   <% end %>
@@ -16,6 +16,6 @@
   <%= booking.event.duration %>
   <%= booking.event.level %>
   <%= booking.event.user.first_name%>
-  <%= link_to 'Cancel', booking_path(booking.id), method: :delete, class:'btn btn-primary', data: {confirm: "Are you sure to cancel?"} %>
+  <%= link_to '', booking_path(booking.id), method: :delete, class:"fa-solid fa-trash-can", data: {confirm: "Are you sure to cancel?"} %>
   <br>
 <% end %>

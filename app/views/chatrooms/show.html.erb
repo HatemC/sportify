@@ -1,4 +1,6 @@
 <div class="container">
+
+<h2> Conversation between <%= @chatroom.sender.name %> and <%= @chatroom.recepient.name %></h2>
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
   <% @chatroom.messages.each do |message| %>
     <div class="message-container" id="message-<%= message.id %>">
@@ -21,21 +23,5 @@
   <%= f.input :content, label: false %>
   <%= f.button :submit, "Send", class:'btn btn-primary' %>
 <% end %>
-</div>
-
-<div class="container">
-  <%= simple_form_for(@chatroom) do |f| %>
-    <div class="form-body">
-    <%= f.input :recepient, prompt: :translate,
-      input_html: { class: "styling" },
-      prompt: " Select user ",
-      collection: User.all
-    %>
-
-  </div>
-
-    <div class="btn-inline">
-      <%= f.button :submit, "Create new conversation", class:'btn btn-primary' %>
-    </div>
-  <% end %>
+<%= link_to "Contat other player", new_chatroom_path, class: 'btn btn-primary' %>
 </div>

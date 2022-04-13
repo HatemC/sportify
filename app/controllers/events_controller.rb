@@ -8,8 +8,8 @@ class EventsController < ApplicationController
     @events = policy_scope(Event)
     @events = @events.where(level: params[:level]) if params[:level]
     @events = @events.where(sport: params[:sport]) if params[:sport]
-    @events = @events.where(date: params[:date]) if params[:date]
-
+    @events = @events.where("date >= '#{params[:start_date].split(' ').first}'") if params[:start_date]
+    @events = @events.where("date <= '#{params[:end_date]}'") if params[:end_date]
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,
@@ -36,7 +36,7 @@ class EventsController < ApplicationController
     @event.user = current_user
     authorize @event
     if @event.save!
-      redirect_to events_path, notice: "event was created"
+      redirect_to dashboard_path, notice: "event was created"
     else
       render :new
     end
