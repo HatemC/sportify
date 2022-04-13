@@ -1,0 +1,28 @@
+.container {
+  flex-direction: column
+}
+.section-container {
+  display: flex;
+  border: solid;
+  border-color: blue;
+  justify-content: space-around
+}
+
+.profile-container {
+  border:solid;
+  border-color: blue
+}
+
+.event-container {
+  border:solid;
+  border-color: blue
+}
+
+.carousel-container {
+  border: solid;
+  border-color: blue
+}
+
+.page-title {
+  text-align:center
+}

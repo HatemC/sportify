@@ -23,8 +23,6 @@
       <%= label_tag('Ends at') %>
       <%= text_field_tag :query,
       params[:query], id: 'range_end'%>
-
-
     </div>
 
     <div class=''>
@@ -38,6 +36,7 @@
         <h4><strong>Sport: </strong><%= event.sport %> </h4>
         <p><strong>Level: </strong><%= event.level %> </p>
         <p><strong>Date: </strong><%= event.date %> </p>
+        <%= link_to "Show", event_path(event), class: 'btn btn-primary' %>
       </div>
 
 <% end %>
