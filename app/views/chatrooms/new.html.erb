@@ -1,0 +1,15 @@
+<div class="container">
+  <%= simple_form_for(@chatroom) do |f| %>
+    <div class="form-body">
+    <%= f.input :recepient_id,
+      prompt: " Select user ",
+      collection: User.all
+    %>
+
+  </div>
+
+    <div class="btn-inline">
+      <%= f.button :submit, "Create new conversation", class:'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
