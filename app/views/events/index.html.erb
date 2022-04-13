@@ -1,51 +1,55 @@
-<h1>index</h1>
-  <div>
-  <%= form_tag(events_path, method: :get) do %>
 
-   <div class='form-element'>
-      <%= label_tag('Sport') %>
-      <%= select_tag(:sport, options_for_select([ ['Tennis', 'Tennis' ], ['Football', 'Football'], ['Yoga', 'Yoga'],['Soccer', 'Soccer'], ['Badminton', 'Badminton'], ['Running', 'Running']])) %>
-    </div>
+<div>
+    <%= form_tag(events_path, method: :get) do %>
+    <div class="d-flex filter_search">
 
-    <div class='form-element'>
-      <%= label_tag('Level') %>
-      <%= select_tag(:level, options_for_select([ ['Beginner', 'Beginner'], ['Intermediate', 'Intermediate'], ['Advanced', 'Advanced']])) %>
-    </div>
+    <div class='form-element form'>
+        <%= label_tag('Sport:') %>
+        <%= select_tag(:sport, options_for_select([ ['Tennis', 'Tennis' ], ['Football', 'Football'], ['Yoga', 'Yoga'],['Soccer', 'Soccer'], ['Badminton', 'Badminton'], ['Running', 'Running']])) %>
+      </div>
+
+      <div class='form-element form'>
+        <%= label_tag('Level:') %>
+        <%= select_tag(:level, options_for_select([ ['Beginner', 'Beginner'], ['Intermediate', 'Intermediate'], ['Advanced', 'Advanced']])) %>
+      </div>
 
 
-    <div class='form-element'>
-      <%= label_tag('Starts from') %>
-      <%= text_field_tag :query,
-      params[:query], id: 'range_start'%>
-    </div>
 
-    <div class='form-element'>
-      <%= label_tag('Ends at') %>
-      <%= text_field_tag :query,
-      params[:query], id: 'range_end'%>
-    </div>
+      <div class='form-element form'>
+        <%= label_tag('From:') %>
+        <%= text_field_tag :query,
+        params[:query], id: 'range_start'%>
+      </div>
 
-    <div class=''>
-      <%= submit_tag('Search', id:"submit-form", class: "btn btn-primary")  %>
-    </div>
+      <div class='form-element form'>
+        <%= label_tag('To:') %>
+        <%= text_field_tag :query,
+        params[:query], id: 'range_end'%>
+      </div>
+
+
+      <div class=''>
+        <%= submit_tag('Search', id:"submit-form", class: "btn btn-ghost")  %>
+      </div>
+      </div>
     <% end %>
+</div>
 
-
-<% @events.each do |event| %>
+<div class="d-flex">
+  <div style="width: 50%;">
+    <% @events.each do |event| %>
       <div>
         <h4><strong>Sport: </strong><%= event.sport %> </h4>
         <p><strong>Level: </strong><%= event.level %> </p>
         <p><strong>Date: </strong><%= event.date %> </p>
         <%= link_to "Show", event_path(event), class: 'btn btn-primary' %>
       </div>
-
-<% end %>
-</div>
-
-  <div class="col-3 col-md-6">
+    <% end %>
+  </div>
 
   <div id="map"
-    style="width: 80%; height: 900px;"
+    style="width: 50%; height: 900px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  </div>
+</div>
+
