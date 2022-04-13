@@ -3,7 +3,7 @@
     <%= form_tag(events_path, method: :get) do %>
     <div class="d-flex filter_search">
 
-    <div class='form-element form'>
+      <div class='form-element form'>
         <%= label_tag('Sport:') %>
         <%= select_tag(:sport, options_for_select([ ['Tennis', 'Tennis' ], ['Football', 'Football'], ['Yoga', 'Yoga'],['Soccer', 'Soccer'], ['Badminton', 'Badminton'], ['Running', 'Running']])) %>
       </div>
@@ -21,28 +21,38 @@
 
       <div class='form-element form'>
         <%= label_tag('To:') %>
-        <%= text_field_tag :end_date,
-        params[:end_date], id: 'range_end'%>
+
+        <%= text_field_tag :query,
+          params[:query], id: 'range_end'%>
+
       </div>
 
-
-      <div class=''>
+      <div class='form-element form'>
         <%= submit_tag('Search', id:"submit-form", class: "btn btn-ghost")  %>
       </div>
-      </div>
+    </div>
     <% end %>
 </div>
 
 <div class="d-flex">
   <div style="width: 50%;">
     <% @events.each do |event| %>
-      <div>
-        <h4><strong>Sport: </strong><%= event.sport %> </h4>
-        <p><strong>Level: </strong><%= event.level %> </p>
-        <p><strong>Date: </strong><%= event.date %> </p>
-        <%= link_to "Show", event_path(event), class: 'btn btn-primary' %>
+      <div class= "card-product">
+      <%= image_tag "#{event.sport}.jpg", alt: "#{event.sport}" %>
+        <div class='txt-style container'>
+          <h4><strong>Sport: </strong><%= event.sport %> </h4>
+          <p><strong>Level: </strong><%= event.level %> </p>
+          <p><strong>Date: </strong><%= event.date %> </p>
+          <p><strong>Address: </strong><%= event.address %> </p>
+          <p><strong>Duration: </strong><%= event.duration %> </p>
+          </div>
+          <div id='btn-event'>
+           <%= link_to "Show", event_path(event), class: 'btn btn-primary' %>
+         </div>
       </div>
+
     <% end %>
+
   </div>
 
   <div id="map"
