@@ -34,14 +34,11 @@ users_data['results'].each do |user_data|
   user.save
 end
 
-
-
 level = ['Beginner', 'Intermediate', 'Advanced']
 sport = ['Tennis', 'Football', 'Yoga', 'Soccer', 'Badminton', 'Running']
 duration = ['1 hour', '2 hour']
 
 puts 'Creating 20 events...'
-
 
 20.times do
   event = Event.new(
