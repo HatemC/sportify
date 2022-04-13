@@ -29,8 +29,12 @@ users_data['results'].each do |user_data|
     bio: bio.sample
   )
 
-  user.save!
+  file = URI.open("#{user_data['picture']['large']}")
+  user.photo.attach(io: file, filename: "#{user.first_name}.png", content_type: 'image/png')
+  user.save
 end
+
+
 
 level = ['Beginner', 'Intermediate', 'Advanced']
 sport = ['Tennis', 'Football', 'Yoga', 'Soccer', 'Badminton', 'Running']
@@ -47,6 +51,7 @@ puts 'Creating 20 events...'
     sport:  sport.sample,
     date: Date.today+rand(90),
     duration: duration.sample,
+    address: "#{Faker::Address.building_number} #{Faker::Address.street_name}, #{Faker::Address.country_by_code(code: 'FR')}",
     # address: "#{Faker::Address.building_number} #{Faker::Address.street_name}, #{Faker::Address.country_by_code(code: 'FR')}",
   )
   event.save!

@@ -4,11 +4,19 @@ class EventsController < ApplicationController
 
   def index
     @users = User.all
-    if params[:commit].present?
-      @events = policy_scope(Event).where(level: params[:level]).where(sport: params[:sport]).where(date: params[:date])
-    else
-      @events = policy_scope(Event)
-      puts "No available matches, try another search!"
+    @events = Event.all
+    @events = policy_scope(Event)
+    @events = @events.where(level: params[:level]) if params[:level]
+    @events = @events.where(sport: params[:sport]) if params[:sport]
+    @events = @events.where(date: params[:date]) if params[:date]
+
+    @markers = @events.geocoded.map do |event|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+
+        info_window: render_to_string(partial: "info_window", locals: {event: event})
+      }
     end
   end
 

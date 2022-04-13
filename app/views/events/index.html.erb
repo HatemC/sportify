@@ -12,6 +12,7 @@
       <%= select_tag(:level, options_for_select([ ['Beginner', 'Beginner'], ['Intermediate', 'Intermediate'], ['Advanced', 'Advanced']])) %>
     </div>
 
+
     <div class='form-element'>
       <%= label_tag('Starts from') %>
       <%= text_field_tag :query,
@@ -22,6 +23,8 @@
       <%= label_tag('Ends at') %>
       <%= text_field_tag :query,
       params[:query], id: 'range_end'%>
+
+
     </div>
 
     <div class=''>
@@ -29,12 +32,22 @@
     </div>
     <% end %>
 
-<% @users.each do |user| %>
-  <div >
-    <h2><strong>Name: </strong><%= user.first_name %></h2>
-      <p><strong>Address: </strong><%= user.address %> </p>
-      <p><strong>Bio: </strong><%= user.bio %> </p>
 
-    </div>
+<% @events.each do |event| %>
+      <div>
+        <h4><strong>Sport: </strong><%= event.sport %> </h4>
+        <p><strong>Level: </strong><%= event.level %> </p>
+        <p><strong>Date: </strong><%= event.date %> </p>
+      </div>
+
 <% end %>
+</div>
+<div class="row row--no-padding">
+  <div class="col-3 col-md-6 col--padding">
+
+  <div id="map"
+    style="width: 100%; height: 900px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
 </div>
