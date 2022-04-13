@@ -1,12 +1,49 @@
 .filter_search {
   background-color: white;
-  margin: 20px;
-  border-radius: 25px;
+  margin: 15px;
+  border-radius: 30px;
   text-align: center;
-  padding: 18px;
+  padding: 2px;
+  justify-content: center;
 
 }
 
 .form {
-  color: pink;
+  margin: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  margin-top: 13px;
+}
+
+.form-control {
+  width: 100%;
+  background-color: white;
+}
+
+
+#sport, #level, #range_end, .form-control:disabled, .form-control[readonly] {
+    background-color: white;
+    border: 1px solid gray;
+    height: 45px;
+    margin: 10px;
+    justify-content: center;
+
+
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: white;
+    border: 1px solid gray;
+    height: 45px;
+    margin: 18px;
+    justify-content: center;
+}
+
+label {
+  display: block;
+}
+
+#submit-form {
+  margin-top: 44px ;
 }
