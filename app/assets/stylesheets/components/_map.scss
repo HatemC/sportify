@@ -1,0 +1,39 @@
+.map-wrapper {
+  height: 100vh;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row--no-padding {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
+}
+
+.notification .notification-content {
+  flex-grow: 1;
+  padding: 0 24px;
+}
+
+.notification p {
+  margin: 0;
+  line-height: 1.4;
+}
