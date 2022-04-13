@@ -50,4 +50,9 @@ puts 'Creating 20 events...'
   event.save!
 end
 
+20.times do
+  chatroom = Chatroom.new(sender: User.all.sample, recepient: User.all.sample)
+  chatroom.save!
+end
+
 puts "#{Event.count} events created"
