@@ -22,8 +22,9 @@ class EventsController < ApplicationController
 
   def show
     @bookings = Booking.all
+    @booking = Booking.new
+    @events = Event.where(sport: @event.sport)
   end
-
 
   def new
     @event = Event.new

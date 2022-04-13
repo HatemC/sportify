@@ -57,5 +57,4 @@ puts 'Creating 20 events...'
   event.save!
 end
 
-
 puts "#{Event.count} events created"

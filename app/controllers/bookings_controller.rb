@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
 before_action :set_booking, only: [:edit, :update, :destroy]
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new
     event = Event.find(params[:event_id].to_i)
     @booking.event = event
     @booking.user = current_user
