@@ -1,1 +1,21 @@
 <h1>Dashboard Page</h1>
+<h2>My Offer</h2>
+  <% current_user.events.each do |event|  %>
+  <%= event.sport %>
+  <%= event.date %>
+  <%= event.duration %>
+  <%= link_to 'Edit', edit_event_path(event.id), class: 'btn btn-primary' %>
+
+  <br>
+  <% end %>
+
+<h2>My Booking</h2>
+<% current_user.bookings.each do |booking| %>
+  <%= booking.event.sport %>
+  <%= booking.event.date %>
+  <%= booking.event.duration %>
+  <%= booking.event.level %>
+  <%= booking.event.user.first_name%>
+  <%= link_to 'Cancel', booking_path(booking.id), method: :delete, class:'btn btn-primary', data: {confirm: "Are you sure to cancel?"} %>
+  <br>
+<% end %>

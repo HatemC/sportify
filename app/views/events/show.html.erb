@@ -1,12 +1,43 @@
-<h1>show</h1>
-<div>Profile section</div>
-<div>
-  <h2>Event Section</h2>
-  <%= @event.sport %>
-  <%= @event.date %>
-  <%= @event.duration %>
-  <%= @event.level %>
+<div class="flex-container">` `
+  <h1>show page</h1>
+  <div><h2>Profile section</h2>
+    <p style="color:blue;">profile description line 1</p>
+    <p style="color:blue;">profile description line 2</p>
+    <p style="color:blue;">profile description line 3</p>
+    <%= link_to "Message", class:'btn btn-primary'%>
+
+  </div>
+
+  <div style="color:green;">
+    <h2>Event Section</h2>
+    <%= @event.sport %>
+    <%= @event.date %>
+    <%= @event.duration %>
+    <%= @event.level %>
+
+    <%= simple_form_for [@event,@booking] do |f| %>
+      <% if current_user != @event.user  %>
+        <%= f.button :submit, "Book Now", class:'btn btn-primary' %>
+      <% end %>
+    <% end %>
+
+  </div>
+  <div>
+    <h2>Other events hosted by the <%= @event.user.first_name %></h2>
+  </div>
 </div>
 
 <div class="btn-container">
 <%= link_to 'Back', events_path, class: "btn btn-primary" %>
+
+<div>
+  <% emojis = ["&#128521","	&#128579","&#128587","&#128131","&#128170"] %>
+  <% emoji = emojis.sample.to_s %>
+  <p>Check out <%= @event.sport %> events by other Sportify users &#128521&#128071</p>
+  <% @events.each do |event|%>
+    <p>
+      <%= event.sport %>
+      <%= event.user.first_name %>
+    </p>
+  <% end %>
+</div>

@@ -12,6 +12,18 @@
       <%= select_tag(:level, options_for_select([ ['Beginner', 'Beginner'], ['Intermediate', 'Intermediate'], ['Advanced', 'Advanced']])) %>
     </div>
 
+    <div class='form-element'>
+      <%= label_tag('Starts from') %>
+      <%= text_field_tag :query,
+      params[:query], id: 'range_start'%>
+    </div>
+
+    <div class='form-element'>
+      <%= label_tag('Ends at') %>
+      <%= text_field_tag :query,
+      params[:query], id: 'range_end'%>
+    </div>
+
     <div class=''>
       <%= submit_tag('Search', id:"submit-form", class: "btn btn-primary")  %>
     </div>
