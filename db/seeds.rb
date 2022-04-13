@@ -9,7 +9,9 @@
 require 'faker'
 Booking.destroy_all
 Event.destroy_all
+Chatroom.destroy_all
 User.destroy_all
+
 
 url = "https://randomuser.me/api/?results=50"
 users_data = JSON.parse(open(url).read)
