@@ -51,7 +51,7 @@ puts 'Creating 20 events...'
     sport:  sport.sample,
     date: Date.today+rand(90),
     duration: duration.sample,
-    address: "#{Faker::Address.building_number} #{Faker::Address.street_name}, #{Faker::Address.country_by_code(code: 'FR')}",
+    address: "19 Rue des Petits Champs"
     # address: "#{Faker::Address.building_number} #{Faker::Address.street_name}, #{Faker::Address.country_by_code(code: 'FR')}",
   )
   event.save!
