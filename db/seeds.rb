@@ -21,9 +21,6 @@ users_data['results'].each do |user_data|
   user = User.new(
     first_name: user_data['name']['first'],
     last_name: user_data['name']['last'],
-    address: "#{user_data['location']['street']['number']} #{user_data['location']['street']['namne']} #{user_data['location']['city']} #{user_data['location']['state']}
-               #{user_data['location']['country']} #{user_data['location']['postcode']} ",
-    email: user_data['email'],
     address: "#{Faker::Address.building_number} #{Faker::Address.street_name}, #{Faker::Address.country_by_code(code: 'FR')}",
     password: '123456',
     bio: bio.sample
@@ -48,7 +45,6 @@ puts 'Creating 20 events...'
     user: User.all.sample,
     sport: sport.sample,
     level: level.sample,
-    sport:  sport.sample,
     date: Date.today+rand(90),
     duration: duration.sample,
     address: "#{Faker::Address.building_number} #{Faker::Address.street_name}, #{Faker::Address.country_by_code(code: 'FR')}",
