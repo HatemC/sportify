@@ -21,6 +21,7 @@ users_data['results'].each do |user_data|
   user = User.new(
     first_name: user_data['name']['first'],
     last_name: user_data['name']['last'],
+    email: user_data['email'],
     address: "#{Faker::Address.building_number} #{Faker::Address.street_name}, #{Faker::Address.country_by_code(code: 'FR')}",
     password: '123456',
     bio: bio.sample
@@ -28,7 +29,7 @@ users_data['results'].each do |user_data|
 
   file = URI.open("#{user_data['picture']['large']}")
   user.photo.attach(io: file, filename: "#{user.first_name}.png", content_type: 'image/png')
-  user.save
+  user.save!
 end
 
 level = ['Beginner', 'Intermediate', 'Advanced']
