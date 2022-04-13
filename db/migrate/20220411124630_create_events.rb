@@ -3,7 +3,7 @@ class CreateEvents < ActiveRecord::Migration[6.1]
     create_table :events do |t|
       t.string :sport
       t.string :level
-      t.string :date
+      t.date :date
       t.string :duration
       t.float :latitude
       t.float :longitude
