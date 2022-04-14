@@ -7,11 +7,13 @@
         </div>
       <p style="color:blue;">Name: <%= @event.user.first_name %> <%= @event.user.last_name.upcase %></p>
       <p style="color:blue;">About Me: <br><%= @event.user.bio %></p>
-      <% chatroom_check = Chatroom.where(sender: @event.user, recepient: current_user).or(Chatroom.where(sender: current_user, recepient: @event.user)) %>
-      <% if chatroom_check.empty?%>
-        <%= link_to "Message", chatrooms_path(chatroom: {recepient_id: @event.user.id}), method: :post, class:'btn btn-primary'%>
-      <% else %>
-        <%= link_to "Message", chatroom_path(chatroom_check.first), class:'btn btn-primary'%>
+      <% if current_user != @event.user %>
+        <% chatroom_check = Chatroom.where(sender: @event.user, recepient: current_user).or(Chatroom.where(sender: current_user, recepient: @event.user)) %>
+        <% if chatroom_check.empty?%>
+          <%= link_to "Message", chatrooms_path(chatroom: {recepient_id: @event.user.id}), method: :post, class:'btn btn-primary'%>
+        <% else %>
+          <%= link_to "Message", chatroom_path(chatroom_check.first), class:'btn btn-primary'%>
+        <% end %>
       <% end %>
     </div>
 

@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:edit, :update, :destroy]
   get 'dashboard', to: 'dashboard#dashboard'
+  get 'conversations', to: 'conversations#conversations'
 end
