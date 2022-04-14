@@ -1,6 +1,11 @@
 <div>
   <%= simple_form_for(@event) do |f| %>
     <div class="form-body">
+
+    <%= f.input :event_name,
+      input_html: {class: 'event_name'}
+    %>
+
     <%= f.input :sport, prompt: :translate,
       input_html: { class: "styling" },
       prompt: " Pick a sport! ",
