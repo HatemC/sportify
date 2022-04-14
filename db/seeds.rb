@@ -12,7 +12,6 @@ Event.destroy_all
 Chatroom.destroy_all
 User.destroy_all
 
-
 url = "https://randomuser.me/api/?results=50"
 users_data = JSON.parse(open(url).read)
 
@@ -45,10 +44,10 @@ puts 'Creating 20 events...'
     user: User.all.sample,
     sport: sport.sample,
     level: level.sample,
-    date: Date.today+rand(90),
+    date: Date.today + rand(90),
     duration: duration.sample,
-    #address: "19 Rue des Petits Champs"
-    address: "#{Faker::Address.building_number} #{Faker::Address.street_name}, #{Faker::Address.country_by_code(code: 'FR')}",
+    # address: "19 Rue des Petits Champs"
+    address: "#{Faker::Address.building_number} #{Faker::Address.street_name}, #{Faker::Address.country_by_code(code: 'FR')}"
   )
   event.save!
 end

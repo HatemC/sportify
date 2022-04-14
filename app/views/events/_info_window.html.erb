@@ -1,8 +1,8 @@
 <div class="notification">
-      <% if offer.user.photo.key.nil?  %>
+      <% if event.user.photo.key.nil?  %>
       <%=  image_tag "default_profil.png", class:"avatar-large" %>
       <% else  %>
-      <%=  cl_image_tag offer.user.photo.key, class:"avatar-large"  %>
+      <%=  cl_image_tag event.user.photo.key, class:"avatar-large"  %>
       <% end  %>
 
   <div class="notification-content">
