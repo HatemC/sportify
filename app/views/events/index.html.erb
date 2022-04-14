@@ -38,7 +38,7 @@
   <div style="width: 50%;">
     <% @events.each do |event| %>
       <div class= "card-product">
-      <%= image_tag "#{event.sport}.jpg", alt: "#{event.sport}" %>
+          <%= image_tag "#{event.sport}.jpg", alt: "#{event.sport}" %>
         <div class='txt-style container'>
           <h4><strong>Sport: </strong><%= event.sport %> </h4>
           <p><strong>Level: </strong><%= event.level %> </p>
@@ -46,17 +46,17 @@
           <p><strong>Address: </strong><%= event.address %> </p>
           <p><strong>Duration: </strong><%= event.duration %> </p>
           </div>
+          <span class="player-name"><p><strong>Hosted by <%=event.user.first_name%></strong></span>
           <div id='btn-event'>
            <%= link_to "Show", event_path(event), class: 'btn btn-primary' %>
          </div>
       </div>
-
     <% end %>
-
-  </div>
+</div>
 
   <div id="map"
     style="width: 50%; height: 900px;"
     data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
