@@ -11,6 +11,10 @@ const initMapbox = () => {
     map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
   };
 
+  const addMarkersToMap = (map, markers) => {
+  markers.forEach((marker) => {
+    const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
@@ -23,7 +27,6 @@ const initMapbox = () => {
       mapboxgl: mapboxgl
     }));
     const markers = JSON.parse(mapElement.dataset.markers);
-    console.log(markers);
     markers.forEach((marker) => {
       const element = document.createElement('div');
       element.className = 'marker';
@@ -42,6 +45,7 @@ const initMapbox = () => {
         .addTo(map);
     });
     fitMapToMarkers(map, markers);
+
   }
 };
 
