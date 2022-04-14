@@ -3,7 +3,7 @@
     <div class="form-body">
     <%= f.input :recepient_id,
       prompt: " Select user ",
-      collection: User.all
+      collection: User.where.not( first_name: @current_user.first_name, last_name: @current_user.last_name)
     %>
 
   </div>
