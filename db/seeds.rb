@@ -16,7 +16,7 @@ User.destroy_all
 url = "https://randomuser.me/api/?results=50"
 users_data = JSON.parse(open(url).read)
 
-bio = ["I love being active!", "I love playing sports!", "I'm looking to make some new friends and play sports", "Looking to get in shape and have some fun!"]
+bio = ["I love being active!", "I love playing sports!", "I'm looking to make some new friends and play sports", "Looking to get in shape and have some fun!", "testing testing testing testing testing testing testing testinng testing"]
 
 puts 'creating 50 fake users...'
 users_data['results'].each do |user_data|
