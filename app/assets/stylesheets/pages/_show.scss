@@ -1,11 +1,13 @@
 .container {
-  flex-direction: column
+  flex-direction: column;
+  margin-top: 10px;
 }
 .section-container {
   display: flex;
   // border: solid;
   // border-color: blue;
-  justify-content: space-around
+  justify-content: space-around;
+  margin-top: 30px;
 }
 
 .profile-container {
@@ -29,25 +31,66 @@
 }
 
 .event-container {
-  padding: 15px;
+  padding: 25px;
   width: 66.6667% !important;
-  border: 1px solid rgb(221, 221, 221) ;
-  border-radius: 12px ;
+  // border: 1px solid rgb(221, 221, 221) ;
+  // border-radius: 12px ;
+}
+
+.event-top {
+  position: relative;
+  border-bottom: 1px solid rgb(221, 221, 221) ;
+  border-bottom-width: 80%;
+  padding-bottom: 20px;
+}
+
+.event-bottom {
+  margin-top: 20px;
 }
 
 .carousel-container {
-  // border: solid;
-  // border-color: blue
+  padding-top: 25px;
 }
 
 .page-title {
-  text-align:center
+  text-align:center;
+  color: #544430;
 }
 
 .btn-container {
  margin: 18px;
 }
 
+.event {
+  margin: 20px;
+}
+
+
 .center {
   margin: auto;
+}
+
+.text-medium {
+  font-size: medium;
+  color: #544430;
+  padding-bottom: 8px;
+
+}
+
+.text-large {
+  font-size: large;
+  color: #544430;
+  padding-bottom: 8px;
+}
+
+h2 {
+  color: #544430;
+}
+
+.fa-heart {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  height: 10px;
+  color:grey;
 }

@@ -28,7 +28,12 @@
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: #54BAB9;
-    border-color: #54BAB9;
+  color: #fff;
+  background-color: #54BAB9;
+  border-color: #54BAB9;
+}
+
+.btn-bottom-left {
+  position: absolute;
+  bottom: 8px;
 }
