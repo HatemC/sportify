@@ -21,11 +21,8 @@
 </div>
 
 <div class="container cards">
-  <div id="badmintonclass="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Badminton.jpg')%>);">
+  <div id="badminton" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Badminton.jpg')%>);">
     BADMINTON
-    <%= const submit = document.getElementById('badminton')
-    submit.addEventListener('click', redirect);
-      %>
   </div>
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Soccer.jpg')%>);">
@@ -49,10 +46,6 @@
   </div>
 </div>
 
-
-    const bad = document.getElementById("btn").addEventListener("click", function() {
-document.write("<p>Hi this is the click event listener in JavaScript</p>");
-});
 <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github"></i></a>
