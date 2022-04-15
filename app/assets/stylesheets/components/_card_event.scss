@@ -1,5 +1,4 @@
 
-
 .card-product {
   overflow: hidden;
   height: 240px;
@@ -74,7 +73,6 @@ h4 {
 }
 
 
-
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
@@ -88,4 +86,9 @@ h4 {
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.card-avatar {
+  width: 40px;
+  border-radius: 50%;
 }
