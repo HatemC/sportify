@@ -50,7 +50,7 @@ puts 'Creating 20 events...'
     date: Date.today+rand(90),
     duration: duration.sample,
 
-    address: address.sample + ", Paris, France"
+    address: address.sample + ", Paris, France",
 
     event_name: event_name.sample
 
