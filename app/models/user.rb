@@ -6,6 +6,9 @@ class User < ApplicationRecord
   has_one_attached :photo
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+    geocoded_by :address
+  after_validation :geocode
   def name
     first_name + " " + last_name
   end
