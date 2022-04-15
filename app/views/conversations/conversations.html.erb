@@ -1,0 +1,24 @@
+<div class="conversation-box">
+  <div class="contact_box">
+    <h4>My chatrooms</h4>
+    <% current_user.chatrooms.each do |chatroom|  %>
+
+    <%= link_to chatroom.recepient.first_name, chatroom_path(chatroom), class: "btn btn-flat-message" %>
+
+    <br>
+    <% end %>
+
+    <% current_user.joigned_chatrooms.each do |chatroom|  %>
+    <%= link_to chatroom.sender.first_name, chatroom_path(chatroom), class: "btn btn-flat-message" %>
+
+    <br>
+    <% end %>
+  </div>
+
+  <div class="container">
+    <div class="email_pic">
+      <h1>Welcome to your coversations' page</h1>
+    </div>
+  </div>
+
+</div>
