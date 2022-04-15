@@ -5,8 +5,6 @@ class EventsController < ApplicationController
 
     if params[:query].present?
       @events = Event.where("sport ILIKE ?", "%#{params[:query]}%")
-    else
-      flash[:notice] = "We don't have the sport yet"
     end
 
     @users = User.all
