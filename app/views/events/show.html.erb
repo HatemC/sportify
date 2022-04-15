@@ -32,7 +32,7 @@
         <div class="text-large"><%= @event.sport %></div>
         <i class="fa-regular fa-heart"></i>
         <div class="text-medium"><i class="fa-regular fa-calendar"></i> <%= @event.date %></div>
-        <div class="text-medium"><%= @event.duration %> <%= @event.level %></div>
+        <div class="text-medium"><%= @event.duration %><strong> · </strong> <%= @event.level %></div>
         <div><%= simple_form_for [@event,@booking] do |f| %>
           <% if current_user != @event.user  %>
             <%= f.button :submit, "Book Now", class:'btn btn-primary' %>
