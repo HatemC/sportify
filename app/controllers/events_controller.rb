@@ -3,25 +3,23 @@ class EventsController < ApplicationController
 
   def index
     if params[:query].present?
-      @events = Event.where("sport ILIKE ?", "%#{params[:query]}%")
+      @events = policy_scope(Event).where("sport ILIKE ?", "%#{params[:query]}%")
+    else
+      @events = policy_scope(Event)
     end
-
     @users = User.all
-    @events = Event.all
-    @events = policy_scope(Event)
     @events = @events.where(level: params[:level]) if params[:level].present?
     @events = @events.where(sport: params[:sport]) if params[:sport].present?
     @events = @events.where(date: params[:date]) if params[:date]
-
-    #string.parse
-    @markers = @events.geocoded.map do |event|
-      {
-        lat: event.latitude,
-        lng: event.longitude,
-
-        info_window: render_to_string(partial: "info_window", locals: { event: event })
-      }
+    @markers = @events.map do |event|
+    {
+      lat: event.latitude,
+      lng: event.longitude,
+      infoWindow: render_to_string(partial: "map_info_window", locals: {event: event}),
+      id: event.id
+    }
     end
+
   end
 
   def show
