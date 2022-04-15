@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
+
     @users = User.all
     @events = Event.all
     @events = policy_scope(Event)
@@ -11,6 +12,7 @@ class EventsController < ApplicationController
     @events = @events.where(date: params[:date]) if params[:date]
 
     #string.parse
+
 
     @markers = @events.geocoded.map do |event|
       {

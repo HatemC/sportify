@@ -15,14 +15,14 @@
 
       <div class='form-element form'>
         <%= label_tag('From:') %>
-        <%= text_field_tag :query,
-        params[:query], id: 'range_start'%>
+        <%= text_field_tag :start_date,
+        params[:start_date], value: params[:start_date] ,id: 'range_start', class: 'datepickr string input'%>
       </div>
-
+      <%= console %>
       <div class='form-element form'>
         <%= label_tag('To:') %>
-        <%= text_field_tag :query,
-        params[:query], id: 'range_end'%>
+        <%= text_field_tag :end_date,
+        params[:end_date], id: 'range_end'%>
       </div>
 
 
