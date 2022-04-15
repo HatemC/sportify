@@ -8,7 +8,6 @@ class EventsController < ApplicationController
       @events = policy_scope(Event)
     end
     @users = User.all
-
     @events = @events.where(level: params[:level]) if params[:level].present?
     @events = @events.where(sport: params[:sport]) if params[:sport].present?
     @events = @events.where(date: params[:date]) if params[:date]
@@ -20,6 +19,7 @@ class EventsController < ApplicationController
       id: event.id
     }
     end
+
   end
 
   def show

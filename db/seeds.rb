@@ -47,7 +47,7 @@ puts 'Creating 20 events...'
     level: level.sample,
     date: Date.today+rand(90),
     duration: duration.sample,
-    address: address.sample + ", Paris , France "
+    address: address.sample + ", Paris, France"
   )
   event.save!
 end
