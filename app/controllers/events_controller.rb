@@ -3,6 +3,10 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
+
+    if params[:query].present?
+      @events = Event.where("sport ILIKE ?", "%#{params[:query]}%")
+    end
     @users = User.all
     @events = Event.all
     @events = policy_scope(Event)

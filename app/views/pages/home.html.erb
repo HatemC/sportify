@@ -7,6 +7,15 @@
 
     <h1>Sportify</h1>
     <p>Practice your favorite sport and make new friends</p>
+
+    <%= form_tag events_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a sport"
+    %>
+    <%= submit_tag "Go!", class: "btn btn-primary" %>
+  <% end %>
   </div>
 </div>
 <br>
