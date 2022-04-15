@@ -1,9 +1,10 @@
 class EventsController < ApplicationController
-
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
-
+    if params[:query].present?
+      @events = Event.where("sport ILIKE ?", "%#{params[:query]}%")
+    end
 
     @users = User.all
     @events = Event.all
@@ -13,14 +14,12 @@ class EventsController < ApplicationController
     @events = @events.where(date: params[:date]) if params[:date]
 
     #string.parse
-
-
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,
         lng: event.longitude,
 
-        info_window: render_to_string(partial: "info_window", locals: { event: event})
+        info_window: render_to_string(partial: "info_window", locals: { event: event })
       }
     end
   end
