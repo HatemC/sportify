@@ -28,6 +28,15 @@
     <div class= 'event-container'>
 
       <div class="event-top">
+
+        <div>
+          <%  if @event.photo.key.nil? %>
+            <%= image_tag "placeholder-image.png", crop: :fill,  class: "event-img-vertical-m" %>
+          <% else  %>
+            <%= cl_image_tag @event.photo.key, crop: :fill,  class: "event-img-vertical-m" %>
+          <% end  %>
+        </div>
+        <div class="event-text">
         <h3><%= @event.event_name %><h3>
         <div class="text-large"><%= @event.sport %></div>
         <i class="fa-regular fa-heart"></i>
@@ -39,6 +48,7 @@
           <% end %>
         <% end %>
         </div >
+      </div>
       </div>
 
 
