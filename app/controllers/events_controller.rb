@@ -14,8 +14,6 @@ class EventsController < ApplicationController
     @events = @events.where(date: params[:date]) if params[:date]
 
     #string.parse
-
-
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,
