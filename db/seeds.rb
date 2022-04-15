@@ -12,11 +12,11 @@ Event.destroy_all
 Chatroom.destroy_all
 User.destroy_all
 
-
 url = "https://randomuser.me/api/?results=50"
 users_data = JSON.parse(open(url).read)
 
-bio = ["I love being active!", "I love playing sports!", "I'm looking to make some new friends and play sports", "Looking to get in shape and have some fun!", "testing testing testing testing testing testing testing testinng testing"]
+bio = ["I love being active!", "I love playing sports!", "I'm looking to make some new friends and play sports", "Looking to get in shape and have some fun!"]
+address = ['8 rue de verneuil', '4 rue de sevres', '24 rue du store', '6 rue du temple', '8 Rue de Verneuil ', '1 Rue des Petits Champs', '10 Rue Cecile Furtado Heine']
 
 puts 'creating 50 fake users...'
 users_data['results'].each do |user_data|
@@ -24,7 +24,7 @@ users_data['results'].each do |user_data|
     first_name: user_data['name']['first'],
     last_name: user_data['name']['last'],
     email: user_data['email'],
-    address: "#{Faker::Address.building_number} #{Faker::Address.street_name}, #{Faker::Address.country_by_code(code: 'FR')}",
+    address: address.sample,
     password: '123456',
     bio: bio.sample
   )
@@ -47,8 +47,7 @@ puts 'Creating 20 events...'
     level: level.sample,
     date: Date.today+rand(90),
     duration: duration.sample,
-    #address: "19 Rue des Petits Champs"
-    address: "#{Faker::Address.building_number} #{Faker::Address.street_name}, #{Faker::Address.country_by_code(code: 'FR')}",
+    address: address.sample
   )
   event.save!
 end
