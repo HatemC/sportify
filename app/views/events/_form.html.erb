@@ -35,6 +35,9 @@
             input_html: { id: "event_address" }
           %>
 
+           <%= f.input :photo, as: :file,
+              input_html: { autocomplete: "picture"} %>
+
           <div class="btn-inline">
             <%= link_to 'Back', events_path, class:'btn btn-primary'%>
             <%= f.button :submit, class:'btn btn-primary' %>

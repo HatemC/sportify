@@ -8,3 +8,21 @@
   border-radius: 4px;
   margin: 8px;
 }
+
+.item-description {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 18px;
+}
+
+.flex-group {
+  display: flex;
+  width: 100%;
+  margin-inline-start: 30px;
+  justify-content: space-between;
+}
+
+.small-line {
+  font-size: small;
+  color: #bf4040;
+}

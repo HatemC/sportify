@@ -38,6 +38,7 @@
 }
 
 .event-top {
+  display: flex;
   position: relative;
   border-bottom: 1px solid rgb(221, 221, 221) ;
   border-bottom-width: 80%;
@@ -93,4 +94,8 @@ h2 {
   right: 10px;
   height: 10px;
   color:grey;
+}
+
+.event-text {
+  margin-inline: 30px;
 }

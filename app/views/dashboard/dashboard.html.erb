@@ -1,33 +1,65 @@
 <div class="container">
   <div class="page-title"><h1>Welcome Back <%= current_user.first_name %>!</h1></div>
-    <div class="container">
-        <h2>My Offer</h2>
-        <% current_user.events.each do |event|  %>
-        <div class="dashboard-item">
-          <div><h5><%= event.sport %></h5></div>
-          <div class="item-description">
-            <div><p><%= event.date %></div>
-            <div><%= event.duration %></div>
+
+  <div class="container">
+  <h2>My Offer</h2>
+      <% current_user.events.each do |event|  %>
+      <div class="dashboard-item">
+
+
+        <div class="item-description">
+        <div>
+          <%  if event.photo.key.nil? %>
+            <%= image_tag "placeholder-image.png", crop: :fill,  class: "event-img-vertical-s" %>
+          <% else  %>
+            <%= cl_image_tag event.photo.key, crop: :fill,  class: "event-img-vertical-s" %>
+          <% end  %>
+        </div>
+
+        <div class="flex-group">
+          <div>
+            <div><h5><%= event.event_name %></h5></div>
+            <div><span><%= event.sport %></span></div>
+            <div><span><%= event.date %><strong> · </strong>
+            <%= event.duration %><strong> · </strong><%= event.level %></span></div>
+            </div>
             <div class="icon-group">
             <%= link_to '', edit_event_path(event.id), class: "fas fa-edit" %>
             </div>
           </div>
-          <% end %>
         </div>
+        <% end %>
       </div>
-
-  <div class="container">
-    <div>
-      <h2>Bookings</h2>
-      <% current_user.bookings.each do |booking| %>
-        <%= booking.event.sport %>
-        <%= booking.event.date %>
-        <%= booking.event.duration %>
-        <%= booking.event.level %>
-        <%= booking.event.user.first_name%>
-        <%= link_to '', booking_path(booking.id), method: :delete, class:"fa-solid fa-trash-can", data: {confirm: "Are you sure to cancel?"} %>
-        <br>
-      <% end %>
     </div>
+
+  <h2>Bookings</h2>
+      <% current_user.bookings.each do |booking| %>
+      <div class="dashboard-item">
+
+        <div class="item-description">
+
+        <div>
+          <%  if booking.event.photo.key.nil? %>
+            <%= image_tag "placeholder-image.png", crop: :fill,  class: "event-img-vertical-s" %>
+          <% else  %>
+            <%= cl_image_tag booking.event.photo.key, crop: :fill,  class: "event-img-vertical-s" %>
+          <% end  %>
+        </div>
+
+        <div class="flex-group">
+
+        <div>
+            <div><h5><%= booking.event.event_name %></h5></div>
+            <div><span><%= booking.event.sport %> with <%= booking.event.user.first_name%></span></div>
+            <div><span><%= booking.event.date %><strong> · </strong>
+            <%= booking.event.duration %><strong> · </strong><%= booking.event.level %></span></div>
+            <div class="small-line"><%= 'status: booked' if booking.status %></div>
+          </div>
+          <div class="icon-group">
+          <%= link_to '', booking_path(booking.id), method: :delete, class:"fa-solid fa-trash-can", data: {confirm: "Are you sure to cancel?"} %>
+          </div>
+        </div>
+        </div>
+      <% end %>
   </div>
-</div>
+<div>

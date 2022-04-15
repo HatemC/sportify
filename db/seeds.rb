@@ -37,6 +37,8 @@ end
 level = ['Beginner', 'Intermediate', 'Advanced']
 sport = ['Tennis', 'Football', 'Yoga', 'Soccer', 'Badminton', 'Running']
 duration = ['1 hour', '2 hour']
+event_name = ['Sport-acholic', 'Summer workout', 'Mindfulness with ME', 'Summer body get ready!']
+
 
 puts 'Creating 20 events...'
 
@@ -47,7 +49,11 @@ puts 'Creating 20 events...'
     level: level.sample,
     date: Date.today+rand(90),
     duration: duration.sample,
+
     address: address.sample + ", Paris, France"
+
+    event_name: event_name.sample
+
   )
   event.save!
 end
