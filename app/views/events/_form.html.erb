@@ -1,39 +1,47 @@
-<div>
-  <%= simple_form_for(@event) do |f| %>
-    <div class="form-body">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4">
 
-    <%= f.input :event_name,
-      input_html: {class: 'event_name'}
-    %>
+      <div>
+        <%= simple_form_for(@event) do |f| %>
+          <div class="form-body">
 
-    <%= f.input :sport, prompt: :translate,
-      input_html: { class: "styling" },
-      prompt: " Pick a sport! ",
-      collection: ['Tennis', 'Football', 'Yoga', 'Soccer', 'Badminton', 'Running']
-    %>
-    <%= f.input :level,
-      input_html: { class: "styling" },
-      prompt: " Pick the level! ",
-      collection: ['Beginner', 'Intermediate', 'Advanced']
-    %>
+          <%= f.input :event_name,
+            input_html: {class: 'event_name'}
+          %>
 
-    <%= f.input :date,
-      input_html: {class: 'datepicker'}
-    %>
+          <%= f.input :sport, prompt: :translate,
+            input_html: { class: "styling" },
+            prompt: " Pick a sport! ",
+            collection: ['Tennis', 'Football', 'Yoga', 'Soccer', 'Badminton', 'Running']
+          %>
+          <%= f.input :level,
+            input_html: { class: "styling" },
+            prompt: " Pick the level! ",
+            collection: ['Beginner', 'Intermediate', 'Advanced']
+          %>
 
-    <%= f.input :duration,
-      input_html: { class: "styling" },
-      prompt: " How long do you want to play? ",
-      collection: ["2 hours", "1 hour", "30 min"]
-    %>
+          <%= f.input :date,
+            input_html: {class: 'datepicker'}
+          %>
 
-    <%= f.input :address,
-      input_html: { id: "event_address" }
-    %>
+          <%= f.input :duration,
+            input_html: { class: "styling" },
+            prompt: " How long do you want to play? ",
+            collection: ["2 hours", "1 hour", "30 min"]
+          %>
 
-    <div class="btn-inline">
-      <%= link_to 'Back', events_path, class:'btn btn-primary'%>
-      <%= f.button :submit, class:'btn btn-primary' %>
+          <%= f.input :address,
+            input_html: { id: "event_address" }
+          %>
+
+          <div class="btn-inline">
+            <%= link_to 'Back', events_path, class:'btn btn-primary'%>
+            <%= f.button :submit, class:'btn btn-primary' %>
+          </div>
+        <% end %>
+      </div>
+
     </div>
-  <% end %>
+  </div>
 </div>
