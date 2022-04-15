@@ -3275,10 +3275,10 @@ findup-sync@^3.0.0:
     micromatch "^3.0.4"
     resolve-dir "^1.0.1"
 
-flatpickr@^4.6.11:
-  version "4.6.11"
-  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.6.11.tgz#c92f5108269c551c6b5069ecd754be610574574c"
-  integrity sha512-/rnbE/hu5I5zndLEyYfYvqE4vPDvI5At0lFcQA5eOPfjquZLcQ0HMKTL7rv5/+DvbPM3/vJcXpXjB/DjBh+1jw==
+flatpickr@^4.6.9:
+  version "4.6.13"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.6.13.tgz#8a029548187fd6e0d670908471e43abe9ad18d94"
+  integrity sha512-97PMG/aywoYpB4IvbvUJi0RQi8vearvU0oov1WW3k0WZPBMrTQVqekSX5CjSG/M4Q3i6A/0FKXC7RyAoAUUSPw==
 
 flatted@^3.2.2:
   version "3.2.5"
@@ -4527,10 +4527,10 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-mapbox-gl@^2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-2.8.0.tgz#698f028575f202d25f2ccb5d6359761d1affb8e2"
-  integrity sha512-sP7TclFDmGhZWfcBlptnA24xO9T4a419W2Y6znGvuRXLkucnGErDIG+/7WLVDrebMYp4E2FtCG+1RtGcYVRIFQ==
+mapbox-gl@^2.8.1:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-2.8.1.tgz#431cd772b50883da53a4e210c0b23297631831f6"
+  integrity sha512-AmttsfvuWonyuOu7HcwM6Ok738A0yVYx5h3tjCAFrAsivY8SiCvF/stK2CXhSw2/6/BbZ3qe/S03J7GvisNskA==
   dependencies:
     "@mapbox/geojson-rewind" "^0.5.1"
     "@mapbox/geojson-types" "^1.0.2"

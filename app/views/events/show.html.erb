@@ -1,6 +1,4 @@
 <div class="container">
-  <h1 class='page-title'>show page</h1>
-
   <div class="section-container">
     <div class = 'profile-container'>
         <div class="profile-photo">
@@ -11,7 +9,7 @@
           <% end %>
         </div>
 
-     
+
       <div class="profile-text">
         <div class="text-center"><p><strong><%= @event.user.first_name %> <%= @event.user.last_name.upcase %></strong></p></div>
         <p>About Me: <br><%= @event.user.bio %></p>
@@ -24,72 +22,39 @@
           <%= link_to "Message", chatroom_path(chatroom_check.first), class:'btn btn-primary'%>
         <% end %>
       <% end %>
+      </div>
     </div>
 
-    <div class= 'event-container' style="color:green;">
-      <h2><%= @event.event_name %><h2>
-      <div><strong><%= @event.sport %></strong></div>
-      <div><i class="fa-regular fa-calendar"></i> <%= @event.date %></div>
-      <div><%= @event.duration %></div>
-      <div><%= @event.level %></div>
-      <div><%= simple_form_for [@event,@booking] do |f| %>
-        <% if current_user != @event.user  %>
-          <%= f.button :submit, "Book Now", class:'btn btn-primary' %>
+    <div class= 'event-container'>
+
+      <div class="event-top">
+        <h3><%= @event.event_name %><h3>
+        <div class="text-large"><%= @event.sport %></div>
+        <i class="fa-regular fa-heart"></i>
+        <div class="text-medium"><i class="fa-regular fa-calendar"></i> <%= @event.date %></div>
+        <div class="text-medium"><%= @event.duration %><strong> · </strong> <%= @event.level %></div>
+        <div><%= simple_form_for [@event,@booking] do |f| %>
+          <% if current_user != @event.user  %>
+            <%= f.button :submit, "Book Now", class:'btn btn-primary' %>
+          <% end %>
         <% end %>
-      <% end %>
+        </div >
       </div>
+
+
       <% if @event.user.events.count > 1 %>
-        <div> More offer by <%= @event.user.first_name %>
-        <% @event.user.events.each do |event|%>
-        <div class= "offer-list"><%= event.sport %></div>
-        <% end  %>
+        <div class="event-bottom">
+          <p>More offer by <%= @event.user.first_name %></p>
+          <% @event.user.events.each do |event|%>
+          <div class= "offer-list"><%= event.sport %></div>
+          <% end  %>
         </div>
         <% end %>
       </div>
     </div>
-    <div class="btn-container">
+     <div class="btn-container">
     <%= link_to 'Back', events_path, class: "btn btn-primary" %>
     </div>
+    <%= render 'carousel' %>
 
-      <div class="carousel-container">
-      <% emojis = ["&#128521"," &#128579","&#128587","&#128131","&#128170"] %>
-      <% emoji = emojis.sample %>
-      <h2>Check out <%= @event.sport %> events &#128521&#128071</h2>
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-
-      <% @events.each_slice(3).with_index do |eventcards, index| %>
-
-      <div class="carousel-item <%= 'active' if index == 0 %> ">
-      <div class="cards-wrapper">
-        <% eventcards.each do |event| %>
-        <div class="card d-none d-md-block">
-          <% if event.user.photo.key.nil?  %>
-          <%=  image_tag "placeholder.png", class:"profile-avatar"  %>
-          <% else  %>
-          <%=  cl_image_tag event.user.photo.key, class:"card-img-top" %>
-          <% end %>
-          <div class="card-body">
-            <h5><div class="card-title"><%= event.user.first_name%></div></h5>
-            <p><div class="card-text"><%= event.user.bio %></div></p>
-            <div>
-            <%= link_to 'Show', event_path(event.id), class:"btn btn-primary" %>
-            </div>
-          </div>
-        </div>
-        <% end %>
-      </div>
-      </div>
-      <% end %>
-    </div>
-
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
 </div>

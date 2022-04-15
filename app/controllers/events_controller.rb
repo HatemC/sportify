@@ -5,12 +5,17 @@ class EventsController < ApplicationController
     if params[:query].present?
       @events = Event.where("sport ILIKE ?", "%#{params[:query]}%")
     end
+
     @users = User.all
     @events = Event.all
     @events = policy_scope(Event)
-    @events = @events.where(level: params[:level]) if params[:level]
-    @events = @events.where(sport: params[:sport]) if params[:sport]
-    @events = @events.where("date >= '#{params[:start_date].split(' ').first}'") if params[:start_date] && @events.where("date <= '#{params[:end_date]}'") if params[:end_date]
+    @events = @events.where(level: params[:level]) if params[:level].present?
+    @events = @events.where(sport: params[:sport]) if params[:sport].present?
+    @events = @events.where(date: params[:date]) if params[:date]
+
+    #string.parse
+
+
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,
@@ -37,7 +42,7 @@ class EventsController < ApplicationController
     @event.user = current_user
     authorize @event
     if @event.save!
-      redirect_to dashboard_path, notice: "event was created"
+      redirect_to events_path, notice: "event was created"
     else
       render :new
     end
@@ -70,6 +75,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:sport, :level, :date, :duration, :address, :event_name)
+    params.require(:event).permit(:sport, :level, :date, :duration, :address)
   end
 end

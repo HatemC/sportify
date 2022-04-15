@@ -1,21 +1,33 @@
-<h1>Dashboard Page</h1>
-<h2>My Offer</h2>
-  <% current_user.events.each do |event|  %>
-  <%= event.sport %>
-  <%= event.date %>
-  <%= event.duration %>
-  <%= link_to '', edit_event_path(event.id), class: "fas fa-edit" %>
+<div class="container">
+  <div class="page-title"><h1>Welcome Back <%= current_user.first_name %>!</h1></div>
+    <div class="container">
+        <h2>My Offer</h2>
+        <% current_user.events.each do |event|  %>
+        <div class="dashboard-item">
+          <div><h5><%= event.sport %></h5></div>
+          <div class="item-description">
+            <div><p><%= event.date %></div>
+            <div><%= event.duration %></div>
+            <div class="icon-group">
+            <%= link_to '', edit_event_path(event.id), class: "fas fa-edit" %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
 
-  <br>
-  <% end %>
-
-<h2>My Booking</h2>
-<% current_user.bookings.each do |booking| %>
-  <%= booking.event.sport %>
-  <%= booking.event.date %>
-  <%= booking.event.duration %>
-  <%= booking.event.level %>
-  <%= booking.event.user.first_name%>
-  <%= link_to '', booking_path(booking.id), method: :delete, class:"fa-solid fa-trash-can", data: {confirm: "Are you sure to cancel?"} %>
-  <br>
-<% end %>
+  <div class="container">
+    <div>
+      <h2>Bookings</h2>
+      <% current_user.bookings.each do |booking| %>
+        <%= booking.event.sport %>
+        <%= booking.event.date %>
+        <%= booking.event.duration %>
+        <%= booking.event.level %>
+        <%= booking.event.user.first_name%>
+        <%= link_to '', booking_path(booking.id), method: :delete, class:"fa-solid fa-trash-can", data: {confirm: "Are you sure to cancel?"} %>
+        <br>
+      <% end %>
+    </div>
+  </div>
+</div>
