@@ -16,8 +16,7 @@ url = "https://randomuser.me/api/?results=50"
 users_data = JSON.parse(open(url).read)
 
 bio = ["I love being active!", "I love playing sports!", "I'm looking to make some new friends and play sports", "Looking to get in shape and have some fun!"]
-address =['38 rue de verneuil','24 rue de sevres','20 rue du store','24 rue du temple','8 rue de verneuil ','19 Rue des Petits Champs', '10 Rue Cecile Furtado Heine' ]
-
+address = ['8 rue de verneuil', '4 rue de sevres', '24 rue du store', '6 rue du temple', '8 Rue de Verneuil ', '1 Rue des Petits Champs', '10 Rue Cecile Furtado Heine']
 
 puts 'creating 50 fake users...'
 users_data['results'].each do |user_data|

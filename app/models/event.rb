@@ -3,5 +3,5 @@ class Event < ApplicationRecord
   has_many :bookings, dependent: :destroy
   geocoded_by :address
 
-  validates :sport, :level, :date, :duration, :address, presence: true
+  validates :sport, :level, :date, :duration, presence: true
 end

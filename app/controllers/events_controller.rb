@@ -3,6 +3,12 @@ class EventsController < ApplicationController
 
   def index
 
+    if params[:query].present?
+      @events = Event.where("sport ILIKE ?", "%#{params[:query]}%")
+    else
+      flash[:notice] = "We don't have the sport yet"
+    end
+
     @users = User.all
     @events = Event.all
     @events = policy_scope(Event)

@@ -3,7 +3,14 @@
   <div class="container text-center">
     <h1>Sportify</h1>
     <p>Practice your favorite sport and make new friends</p>
-
+    <%= form_tag events_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a sport"
+      %>
+      <%= submit_tag "Go!", class: "btn btn-primary" %>
+    <% end %>
     </form>
   </div>
 </div>
@@ -14,8 +21,11 @@
 </div>
 
 <div class="container cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Badminton.jpg')%>);">
+  <div id="badmintonclass="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Badminton.jpg')%>);">
     BADMINTON
+    <%= const submit = document.getElementById('badminton')
+    submit.addEventListener('click', redirect);
+      %>
   </div>
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Soccer.jpg')%>);">
@@ -39,6 +49,10 @@
   </div>
 </div>
 
+
+    const bad = document.getElementById("btn").addEventListener("click", function() {
+document.write("<p>Hi this is the click event listener in JavaScript</p>");
+});
 <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github"></i></a>

@@ -9,8 +9,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-    geocoded_by :address
-  after_validation :geocode
+
   def name
     first_name + " " + last_name
   end
