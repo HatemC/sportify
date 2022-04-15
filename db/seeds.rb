@@ -15,8 +15,9 @@ User.destroy_all
 url = "https://randomuser.me/api/?results=50"
 users_data = JSON.parse(open(url).read)
 
-bio = ["I love being active!", "I love playing sports!", "I'm looking to make some new friends and play sports", "Looking to get in shape and have some fun!"]
-address = ['8 rue de verneuil', '4 rue de sevres', '24 rue du store', '6 rue du temple', '8 Rue de Verneuil ', '1 Rue des Petits Champs', '10 Rue Cecile Furtado Heine']
+address= ["1 Rue de la Légion d'Honneur", "Place Georges-Pompidou", "37 Quai Branly", "11 Av. du Président", "23 Rue de Sévigné","5 Rue de Thorigny", "129 Rue de Grenelle", "77 Rue de Varenne", "10 Bd Montmartre", "63 Rue de Monceau"]
+bio = ["I love being active!", "I love playing sports!", "I'm looking to make some new friends and play sports", "Looking to get in shape and have some fun!", "testing testing testing testing testing testing testing testinng testing"]
+
 
 puts 'creating 50 fake users...'
 users_data['results'].each do |user_data|
