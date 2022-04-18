@@ -18,7 +18,7 @@
         <%= text_field_tag :start_date,
         params[:start_date], value: params[:start_date] ,id: 'range_start', class: 'datepickr string input'%>
       </div>
-     
+
       <div class='form-element form'>
         <%= label_tag('To:') %>
         <%= text_field_tag :end_date,
@@ -39,7 +39,7 @@
 
       <div class= "card-product">
           <%= image_tag "#{event.sport}.jpg", alt: "#{event.sport}" %>
-        <div class='txt-style container'>
+        <div class='txt-style container', data-event-id="<%= event.id %>">
           <h4><strong>Sport: </strong><%= event.sport %> </h4>
           <p><strong>Level: </strong><%= event.level %> </p>
           <p><strong>Date: </strong><%= event.date %> </p>
