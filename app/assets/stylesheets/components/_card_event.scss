@@ -1,7 +1,7 @@
 
 .card-product {
   overflow: hidden;
-  height: 240px;
+  height: 190px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -21,9 +21,14 @@ h4 {
   color: #544430;
 }
 #btn-event {
-  margin-top: 152px;
+  margin-top: 99px;
   margin-left: 85px;
 }
+.event-submit-button{
+  margin-top: 13px;
+}
+
+
 .container {
     flex-direction: column;
 }
@@ -34,7 +39,7 @@ h4 {
   object-fit: cover;
 }
 .player-name {
-  height: 217px;
+  height: 166px;
 }
 .card-product h2 {
   font-size: 16px;

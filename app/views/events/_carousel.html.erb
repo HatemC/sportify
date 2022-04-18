@@ -2,7 +2,8 @@
     <% emojis = ["&#128521"," &#128579","&#128587","&#128131","&#128170"] %>
     <% emoji = emojis.sample %>
 
-    <h5 style="text-align:center"><strong> Check out other <%= @event.sport %> events &#128521&#128071</strong></h5>
+    <h5 style="text-align:center"><strong> Check out other <%= @event.sport %> events &#128521&#128071</strong>
+    </h5>
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
 
@@ -12,6 +13,7 @@
       <div class="cards-wrapper">
         <% eventcards.each do |event| %>
             <% unless event.id == params[:id].to_i %>
+            <%= link_to event_path(event.id), class:"event_link" do %>
             <div class="carousel-card d-none d-md-block">
               <% if event.photo.key.nil?  %>
               <%=  image_tag "placeholder-image.png", class:"card-img-top" %>
@@ -28,10 +30,10 @@
                 <div class="carousel-card-title"><%= event.user.first_name%></div>
                 <div class="carousel-card-text"><%= event.level %><br><%= event.date.strftime('%m-%b-%Y (%a)') %></div>
                 <div>
-                <%= link_to 'Show', event_path(event.id), class:"btn btn-primary btn-bottom-left" %>
                 </div>
               </div>
             </div>
+            <% end %>
           <% end %>
         <% end %>
       </div>
