@@ -1,5 +1,6 @@
 .carousel-container {
-  margin-inline: 20px;
+  margin-inline: 0px;
+  background-color: #fff6e8;
 }
 
 .cards-wrapper {
@@ -36,10 +37,13 @@
   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
   border: none;
   border-radius: 10px;
+  background-color: white;
 
 }
 .carousel-inner {
   padding: 1em;
+  margin-left: 38px;
+  margin-right: 38px;
 }
 .carousel-control-prev,
 .carousel-control-next {
@@ -59,6 +63,17 @@
 .carousel-card-title {
   font-size: 15px;
 
+}
+
+#carousel-title h5 {
+  height: 81px;
+  background-color: #FE9602;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  padding: 23px;
+  margin-bottom: 10px;
+  font-size: 26px;
+  box-shadow: 2px 3px 4px 0 rgba(22, 22, 26, 0.18);
 }
 
 .carousel-card-text {
