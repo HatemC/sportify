@@ -71,7 +71,6 @@
           <% end %>
 
         <p>More event hosted by <%= @event.user.first_name %> &#128293</p>
-        <%= console %>
           <div class="event-group">
             <% @event.user.events.each do |event|%>
               <% unless event.id == params[:id].to_i || event.sport == @event.sport%>
