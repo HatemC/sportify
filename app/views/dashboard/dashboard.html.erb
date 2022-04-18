@@ -1,8 +1,8 @@
-<div class="container">
+<div class="page-container">
   <div class="page-title"><h1>Welcome Back <%= current_user.first_name %>!</h1></div>
 
   <div class="container">
-  <h5>My Offer</h5>
+  <h5>My <%= 'event'.pluralize(current_user.events.count) %></h5>
       <% current_user.events.each do |event|  %>
       <div class="dashboard-item">
 
@@ -21,22 +21,23 @@
             <div><span><%= event.sport %></span></div>
             <div><span><%= event.date.strftime(' %m-%b-%Y (%a)') %><strong> · </strong>
             <%= event.duration %><strong> · </strong><%= event.level %></span></div>
-            </div>
-            <div class="icon-group">
-            <div class="icon"><%= link_to '', event_path(event.id), class:'fa-solid fa-magnifying-glass'%></div>
-            <div class="icon"><%= link_to '', edit_event_path(event.id), class: "fas fa-edit" %></div>
-            <div class="icon"><%= link_to '', event_path(event.id), method: :delete, class:"fa-solid fa-trash-can", data: {confirm: "Are you sure to delete your offer?"} %></div>
-
-            </div>
           </div>
+
+          <div class="icon-group">
+          <div class="icon"><%= link_to '', event_path(event.id), class:'fa-solid fa-magnifying-glass'%></div>
+          <div class="icon"><%= link_to '', edit_event_path(event.id), class: "fas fa-edit" %></div>
+          <div class="icon"><%= link_to '', event_path(event.id), method: :delete, class:"fa-solid fa-trash-can", data: {confirm: "Are you sure to delete your offer?"} %></div>
+          </div>
+
         </div>
-        <% end %>
+        </div>
       </div>
-    </div>
+      <% end %>
   </div>
 
+
   <div class="container">
-  <h5>Bookings</h5>
+  <h5><%= 'Booking'.pluralize(current_user.bookings.count) %></h5>
       <% current_user.bookings.each do |booking| %>
       <div class="dashboard-item">
 
@@ -51,8 +52,7 @@
         </div>
 
         <div class="flex-group">
-
-        <div>
+          <div>
             <div><h5><%= booking.event.event_name %></h5></div>
             <div><span><%= booking.event.sport %> with <%= booking.event.user.first_name%></span></div>
             <div><span><%= booking.event.date.strftime(' %m-%b-%Y (%a)') %><strong> · </strong>
@@ -66,6 +66,6 @@
         </div>
         </div>
       <% end %>
-  </div>
-  </div>
+  <%# </div> %>
+
 <div>
