@@ -12,13 +12,18 @@ class ChatroomsController < ApplicationController
   end
 
   def create
+    chatroom_check = Chatroom.where(sender: User.find(params[:chatroom][:recepient_id]), recepient: current_user).or(Chatroom.where(sender: current_user, recepient: User.find(params[:chatroom][:recepient_id])))
     @chatroom = Chatroom.new(chat_params)
-    @chatroom.sender = current_user
     authorize @chatroom
-    if @chatroom.save!
-      redirect_to chatroom_path(@chatroom), notice: "new conversion was created"
+    if chatroom_check.empty?
+      @chatroom.sender = current_user
+      if @chatroom.save!
+        redirect_to chatroom_path(@chatroom), notice: "new conversion was created"
+      else
+        render :new
+      end
     else
-      render :new
+      redirect_to chatroom_path(chatroom_check.ids)
     end
   end
 
