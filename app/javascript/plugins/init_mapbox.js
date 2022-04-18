@@ -15,7 +15,7 @@ const initMapbox = () => {
 
     const markers = JSON.parse(mapElement.dataset.markers);
     // Here we store map markers in an array
-    const mapMarkers = []
+    const mapMarkers = [];
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
@@ -24,10 +24,21 @@ const initMapbox = () => {
         .setPopup(popup)
         .addTo(map);
       mapMarkers.push(newMarker)
+
+      // We use the "getElement" funtion provided by mapbox-gl to access to the marker's HTML an set an id
+      newMarker.getElement().dataset.markerId = marker.id;
+      // Put a microphone on the new marker listening for a mouseenter event
+      newMarker.getElement().addEventListener('mouseenter', (e) => toggleCardHighlighting(e));
+      // We put a microphone on listening for a mouseleave event
+      newMarker.getElement().addEventListener('mouseleave', (e) => toggleCardHighlighting(e));
     });
 
+    map.addControl(new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl
+    }));
+
     fitMapToMarkers(map, markers);
-    // We give the array of marker to a new function called "openInfoWindow"
     openInfoWindow(mapMarkers);
   }
 };
@@ -39,19 +50,16 @@ const fitMapToMarkers = (map, markers) => {
 };
 
 const openInfoWindow = (markers) => {
-  // Select all cards
   const cards = document.querySelectorAll('.card');
   cards.forEach((card, index) => {
-    // Put a microphone on each card listening for a mouseenter event
     card.addEventListener('mouseenter', () => {
-      // Here we trigger the display of the corresponding marker infoWindow with the "togglePopup" function provided by mapbox-gl
       markers[index].togglePopup();
     });
-    // We also put a microphone listening for a mouseleave event to close the modal when user doesn't hover the card anymore
     card.addEventListener('mouseleave', () => {
       markers[index].togglePopup();
     });
   });
 }
+
 
 export { initMapbox };
