@@ -21,5 +21,39 @@ display:flex
 
 .conversation-box {
 display: flex;
+position: relative;
 
+}
+
+.conv-message {
+margin-left: 70px;
+}
+
+.conv-message-right {
+  right: 70px;
+  position: absolute;
+
+}
+
+.container-message {
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.user-right {
+  position: absolute;
+  right: 160px;
+}
+
+.data-right {
+position: absolute;
+right: 200px;
+}
+
+.container-chatroom {
+    position: relative;
+}
+
+#zone-content {
+  box-sizing: 30px;
 }
