@@ -37,6 +37,7 @@ const initMapbox = () => {
       accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl
     }));
+
     fitMapToMarkers(map, markers);
     openInfoWindow(mapMarkers);
   }
