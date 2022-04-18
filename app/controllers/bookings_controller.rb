@@ -7,6 +7,7 @@ before_action :set_booking, only: [:edit, :update, :destroy]
     event = Event.find(params[:event_id].to_i)
     @booking.event = event
     @booking.user = current_user
+    @booking.status = false
 
     authorize @booking
 
@@ -21,9 +22,9 @@ before_action :set_booking, only: [:edit, :update, :destroy]
 
   def update
     @booking.update(booking_params)
-
+    authorize @booking
     if @booking.save!
-      redirect_to @booking, notice: "Your booking was updated"
+      redirect_to dashboard_url, notice: "New booking was updated"
     else
       render :edit
     end
