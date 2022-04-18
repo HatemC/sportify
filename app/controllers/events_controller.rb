@@ -38,7 +38,7 @@ class EventsController < ApplicationController
     @event.user = current_user
     authorize @event
     if @event.save!
-      redirect_to events_path, notice: "event was created"
+      redirect_to dashboard_path, notice: "event was created"
     else
       render :new
     end
