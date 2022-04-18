@@ -68,7 +68,7 @@
             <div><span><%= booking.event.sport %> with <%= booking.event.user.first_name%></span></div>
             <div><span><%= booking.event.date.strftime(' %m-%b-%Y (%a)') %><strong> · </strong>
             <%= booking.event.duration %><strong> · </strong><%= booking.event.level %></span></div>
-            <div class="small-line"><%= 'status: booked' if booking.status %></div>
+            <div class="small-line"><%= booking.status ? 'status: booked' : 'status: pending'  %></div>
           </div>
           <div class="icon-group">
           <div class="icon"><%= link_to '', event_path(booking.event.id), class:'fa-solid fa-magnifying-glass'%></div>
@@ -80,3 +80,46 @@
   <%# </div> %>
 
 <div>
+
+
+  <div class="container">
+
+  <h5>My <%= 'Request'.pluralize(current_user.events.count) %></h5>
+      <% current_user.events.each do |event|  %>
+        <div class="dashboard-item">
+
+          <% event.bookings.each do |request|  %>
+           <% if !request.status %>
+            <% request_user = User.find(request.user_id) %>
+            <div class="item-description">
+             <div>
+                <%  if current_user.photo.key.nil? %>
+                  <%= image_tag "default_profil.png", crop: :fill,  class: "event-img-vertical-s" %>
+                <% else  %>
+                  <%= cl_image_tag request_user.photo.key, crop: :fill,  class: "event-img-vertical-s" %>
+                <% end  %>
+              </div>
+
+              <div class="flex-group">
+                <div>
+                  <div><h5><%= event.event_name %></h5></div>
+                  <div><span><%= event.sport %></span></div>
+
+                  <p> Booking request from <%= request_user.first_name %> </p>
+                 </div>
+                <div>
+
+                    <%= link_to "Accept", booking_path(request, booking: {status: true}), method: :patch, class:'btn btn-primary' %>
+
+                  </div >
+                </div>
+
+                </div>
+              </div>
+
+            <% end %>
+          <% end%>
+
+        </div>
+      <% end %>
+  </div>

@@ -19,7 +19,6 @@ class EventsController < ApplicationController
       id: event.id
     }
     end
-
   end
 
   def show

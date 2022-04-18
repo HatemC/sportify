@@ -38,13 +38,14 @@
     <% @events.each do |event| %>
 
       <div class= "card-product">
+        
         <% if event.photo.key.nil?  %>
         <%=  image_tag "#{event.sport}.jpg", alt: "#{event.sport}"%>
         <% else  %>
         <%=  cl_image_tag event.photo.key, alt: "#{event.sport}" %>
         <% end %>
 
-        <div class='txt-style container'>
+        <div class='txt-style container', data-event-id="<%= event.id %>">
           <h4><strong>Sport: </strong><%= event.sport %> </h4>
           <p><strong>Level: </strong><%= event.level %> </p>
           <p><strong>Date: </strong><%= event.date %> </p>
