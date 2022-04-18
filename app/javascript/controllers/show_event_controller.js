@@ -6,9 +6,4 @@ export default class extends Controller {
   console.log(this.show-eventTarget);
   }
 
-  show() {
-    redirect_to event_path(event.id);
-
-  }
-
 }
