@@ -8,6 +8,7 @@
   // border-color: blue;
   justify-content: space-around;
   margin-top: 30px;
+  margin-inline: 90px;
 }
 
 .profile-container {
@@ -49,6 +50,15 @@
   margin-top: 20px;
 }
 
+.event-group {
+  display: flex;
+  align-items: center;
+}
+
+.offer-list {
+  margin-inline: 12px;
+}
+
 .carousel-container {
   padding-top: 25px;
 }
@@ -71,31 +81,15 @@
   margin: auto;
 }
 
-.text-medium {
-  font-size: medium;
-  color: #544430;
-  padding-bottom: 8px;
-
-}
-
-.text-large {
-  font-size: large;
-  color: #544430;
-  padding-bottom: 8px;
-}
-
 h2 {
   color: #544430;
 }
 
-.fa-regular.fa-heart{
-  position: absolute;
-  top: 15px;
-  right: 10px;
-  height: 10px;
-  color:grey;
+.event-text {
+  flex-grow: 1;
+  margin-inline: 30px;
 }
 
-.event-text {
-  margin-inline: 30px;
+.timeslot-container {
+  margin-block: 10px;
 }
