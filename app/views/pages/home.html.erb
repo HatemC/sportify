@@ -1,10 +1,9 @@
-
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(<%= asset_url('sportify.jpg')%>);">
   <div class="container text-center">
     <h1>Sportify</h1>
     <p>where athletes meet athletes</p>
-
-    <%= form_tag events_path, method: :get do %>
+    <div class="search-form-control form-group center">
+        <%= form_tag events_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
@@ -14,35 +13,37 @@
     <% end %>
     </form>
 
+    </div>
+
   </div>
 </div>
-
+<br>
 <div class="container text-center">
   <h2>Don't know what to search? Here are some ideas:</h2>
 </div>
-
+<br>
 <div class="container cards">
-  <div id="badminton" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Badminton.jpg')%>);">
+  <div id="badminton" class="card-category" onclick="window.location.href='https://sportify-wagon.herokuapp.com/events?query=badminton'" style="cursor: pointer; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Badminton.jpg')%>);">
     BADMINTON
   </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Soccer.jpg')%>);">
+  <div class="card-category" onclick="window.location.href='https://sportify-wagon.herokuapp.com/events?query=soccer'" style="cursor: pointer; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Soccer.jpg')%>);">
     SOCCER
   </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Yoga.jpg')%>);">
+  <div class="card-category" onclick="window.location.href='https://sportify-wagon.herokuapp.com/events?query=yoga'"style="cursor: pointer; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Yoga.jpg')%>);">
     YOGA
   </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Tennis.jpg')%>);">
+  <div class="card-category" onclick="window.location.href='https://sportify-wagon.herokuapp.com/events?query=tennis'" style="cursor: pointer; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Tennis.jpg')%>);">
     TENNIS
   </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Football.jpg')%>);">
+  <div class="card-category" onclick="window.location.href='https://sportify-wagon.herokuapp.com/events?query=football'" style="cursor: pointer; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Football.jpg')%>);">
     FOOTBALL
   </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Running.jpg')%>);">
+  <div class="card-category" onclick="window.location.href='https://sportify-wagon.herokuapp.com/events?query=running'" style="cursor: pointer; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Running.jpg')%>);">
     RUNNING
   </div>
 </div>
