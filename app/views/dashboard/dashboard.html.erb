@@ -1,8 +1,19 @@
-<div class="page-container">
+<div class="page-container" data-controller="switch-tab">
   <div class="page-title"><h1>Welcome Back <%= current_user.first_name %>!</h1></div>
 
-  <div class="container">
-  <h5>My <%= 'event'.pluralize(current_user.events.count) %></h5>
+  <div>
+    <ul class="list-inline tabs-underlined">
+    <li>
+      <a href="#" class="tab-underlined active" data-action="click->switch-tab#showEvents" data-switch-tab-target="event">My event</a>
+    </li>
+    <li>
+      <a href="#" class="tab-underlined" data-action="click->switch-tab#showBookings" data-switch-tab-target="booking">My booking</a>
+    </li>
+    </ul>
+  <div>
+
+  <div class="events-container" data-switch-tab-target="events">
+  <h5>There are <%= current_user.events.count %> coming <%='event'.pluralize(current_user.events.count) %><i class="fa-solid fa-bullhorn"></i></h5>
       <% current_user.events.each do |event|  %>
       <div class="dashboard-item">
 
@@ -36,8 +47,8 @@
   </div>
 
 
-  <div class="container">
-  <h5><%= 'Booking'.pluralize(current_user.bookings.count) %></h5>
+  <div class="bookings-container d-none" data-switch-tab-target="bookings">
+  <h5>There are <%= current_user.bookings.count %> coming <%= 'booking'.pluralize(current_user.bookings.count) %><i class="fa-solid fa-bullhorn"></i></h5>
       <% current_user.bookings.each do |booking| %>
       <div class="dashboard-item">
 
