@@ -1,6 +1,6 @@
 .carousel-container {
   margin-inline: 0px;
-  background-color: #fff6e8;
+
 }
 
 .cards-wrapper {
@@ -67,13 +67,16 @@
 
 #carousel-title h5 {
   height: 81px;
-  background-color: #FE9602;
-  color: white;
+  border-bottom: solid;
+  margin-left: 120px;
+  margin-right: 120px;
+  border-color: #BBBBBB;
+  color: #FE9602;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   padding: 23px;
   margin-bottom: 10px;
   font-size: 26px;
-  box-shadow: 2px 3px 4px 0 rgba(22, 22, 26, 0.18);
+
 }
 
 .carousel-card-text {

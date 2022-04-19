@@ -16,13 +16,13 @@
       <div class='form-element form'>
         <%= label_tag('From:') %>
         <%= text_field_tag :start_date,
-        params[:start_date], value: params[:start_date] ,id: 'range_start', class: 'datepickr string input'%>
+        params[:start_date], value: params[:start_date] ,id: 'range_start', class: 'datepicker string input'%>
       </div>
 
       <div class='form-element form'>
         <%= label_tag('To:') %>
         <%= text_field_tag :end_date,
-        params[:end_date], id: 'range_end'%>
+        params[:end_date],value: params[:end_date], id: 'range_end', class: 'datepicker string input'%>
       </div>
 
 
@@ -38,7 +38,7 @@
     <% @events.each do |event| %>
 
       <div class= "card-product">
-        
+
         <% if event.photo.key.nil?  %>
         <%=  image_tag "#{event.sport}.jpg", alt: "#{event.sport}"%>
         <% else  %>
