@@ -4,19 +4,21 @@ class EventsController < ApplicationController
   def index
     if params[:query].present?
       @events = policy_scope(Event).where("sport ILIKE ?", "%#{params[:query]}%")
-    # elsif params[:sport].present?
-    #   @events = policy_scope(Event).where("sport ILIKE ?", "%#{params[:sport]}%")
     else
       @events = policy_scope(Event)
     end
 
-    @events = @events.where("sport ILIKE ?", "%#{params[:sports]}%") if params[:sports]
+    if params[:sports].present?
+      @events = @events.where("sport ILIKE ?", "%#{params[:sports]}%") if params[:sports]
+    else
+      @events = @events.all
+    end
 
     @users = User.all
     @events = @events.where(level: params[:level]) if params[:level].present?
     @events = @events.where(sport: params[:sport]) if params[:sport].present?
-    @events = @events.where("date >= '#{params[:start_date]}'") if params[:start_date]
-    @events = @events.where("date <= '#{params[:end_date]}'") if params[:end_date]
+    @events = @events.where("date >= '#{params[:start_date]}'") if params[:start_date].present?
+    @events = @events.where("date <= '#{params[:end_date]}'") if params[:end_date].present?
     @markers = @events.map do |event|
     {
       lat: event.latitude,

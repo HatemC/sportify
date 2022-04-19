@@ -1,4 +1,4 @@
-<div class="navbar sticky-top navbar-expand-sm navbar-light navbar-lewagon <%= yield(:navbar_class) %>">
+<div class="navbar sticky-top navbar-expand-sm navbar-light navbar-lewagon <%= yield(:navbar_class) %>" data-controller="navbar-search">
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "Ball.png" %>
   <% end %>
@@ -17,20 +17,22 @@
           <li>
           <div class="search-form-control-nav">
               <%= form_tag events_path, method: :get do %>
+
                 <%= text_field_tag :sports,
                 params[:sports],
-                class: "navbar-search",
+                class: "navbar-search d-none",
+                "data-navbar-search-target": "searchbox",
                 placeholder: "Find a sport"
                 %>
-                <%= submit_tag "Search" %>
+                <%= submit_tag "Search", class:"d-none"%>
               <% end %>
             </form>
           </div>
           </li>
           <li class="nav-item active">
-                <%= link_to events_path do %>
-                <i class="fa-solid fa-magnifying-glass" data-toggle="tooltip" data-placement="bottom" title="Search for a sport"></i>
-                <% end %>
+                <%# <%= link_to events_path do %>
+                <i class="fa-solid fa-magnifying-glass" data-action="click->navbar-search#displaySearch" data-toggle="tooltip" data-placement="bottom" title="Search for a sport"></i>
+                <%# <% end %>
               </li>
           <li class="nav-item active">
             <%= link_to conversations_path do %>
