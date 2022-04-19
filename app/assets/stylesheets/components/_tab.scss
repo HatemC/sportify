@@ -7,18 +7,18 @@
 }
 
 .tabs-underlined .tab-underlined {
-  color: #54BAB9;
+  color: #FE9602;
   padding: 8px;
   // margin: 8px;
   opacity: .4;
   cursor: pointer;
   text-decoration: none;
-  border: 4px solid #54BAB9;
+  border: 4px solid #FE9602;
 }
 
 .tabs-underlined .tab-underlined.active {
   opacity: 1;
   // border-bottom: 3px solid #54BAB9;
-  background-color: #54BAB9;
+  background-color: #FE9602;
   color: white;
 }
