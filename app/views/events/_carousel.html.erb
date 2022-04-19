@@ -26,9 +26,9 @@
               <div class="card-body">
                   <i class="fa-regular fa-heart"></i>
                   <% if event.user.photo.key.nil?  %>
-                  <%=  image_tag "placeholder.png", class:"card-avatar"  %>
+                  <%=  image_tag "placeholder.png", class:"card-avatar avatar"  %>
                   <% else %>
-                  <%=  cl_image_tag event.user.photo.key, class:"card-avatar" %>
+                  <%=  cl_image_tag event.user.photo.key, class:"card-avatar avatar" %>
                   <% end %>
                 <div class="carousel-card-title"><%= event.user.first_name%></div>
                 <div class="carousel-card-text"><%= event.level %><br><%= event.date.strftime('%m-%b-%Y (%a)') %></div>
