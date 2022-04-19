@@ -40,9 +40,9 @@
       <div class= "card-product">
 
         <% if event.photo.key.nil?  %>
-        <%=  image_tag "#{event.sport}.jpg", alt: "#{event.sport}"%>
+        <%=  image_tag "#{event.sport}.jpg", alt: "#{event.sport}", class: "card-product-img" %>
         <% else  %>
-        <%=  cl_image_tag event.photo.key, alt: "#{event.sport}" %>
+        <%=  cl_image_tag event.photo.key, alt: "#{event.sport}", class: "card-product-img" %>
         <% end %>
 
         <div class='txt-style container', data-event-id="<%= event.id %>">
@@ -52,10 +52,23 @@
           <p><strong>Address: </strong><%= event.address %> </p>
           <p><strong>Duration: </strong><%= event.duration %> </p>
           </div>
-          <span class="player-name"><p><strong>Hosted by <%=event.user.first_name%></strong></span>
+          <span class="player-name"><p><strong>Hosted by <%=event.user.first_name%></strong>
+            <%  if event.user.photo.key.nil? %>
+              <%= image_tag "default_profil.png", class: "index-avatar"%>
+            <% else  %>
+              <%= cl_image_tag event.user.photo.key, class: "index-avatar" %>
+            <% end  %>
           <div id='btn-event'>
-           <%= link_to "Show", event_path(event), class: 'btn btn-primary' %>
-         </div>
+           <%= link_to "Details", event_path(event), class: 'btn btn-ghost' %>
+          </div>
+          <div id="btn-event-2"><%= simple_form_for [event,@booking] do |f| %>
+              <% if current_user != event.user  %>
+                <%= f.button :submit, "Book Now", class:'btn btn-primary' %>
+              <% end %>
+            <% end %>
+            </div>
+           </span>
+
       </div>
     <% end %>
 </div>

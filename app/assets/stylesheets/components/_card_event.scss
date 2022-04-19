@@ -9,6 +9,7 @@
   margin: 12px;
   padding: 12px;
   margin-top: 0;
+
 }
 .txt-style {
   font-size: 12px;
@@ -21,8 +22,14 @@ h4 {
   color: #544430;
 }
 #btn-event {
-  margin-top: 99px;
-  margin-left: 85px;
+  position: absolute;
+  bottom: 10px;
+  right: -20px;
+}
+#btn-event-2 {
+  position: absolute;
+  bottom: 10px;
+  right: 80px;
 }
 .event-submit-button{
   margin-top: 13px;
@@ -32,13 +39,16 @@ h4 {
     flex-direction: column;
 }
 
-.card-product img {
+.card-product-img {
   height: 100%;
   width: 240px;
   object-fit: cover;
 }
 .player-name {
   height: 166px;
+  width: 33%;
+  position: relative;
+  margin-right: 15px;
 }
 .card-product h2 {
   font-size: 16px;
@@ -92,7 +102,11 @@ h4 {
   width: 40px;
 }
 
-.card-avatar {
+
+.index-avatar {
   width: 40px;
   border-radius: 50%;
+  top: -2px;
+  right: -20px;
+  position: absolute;
 }

@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
+    @booking = Booking.new
     if params[:query].present?
       @events = policy_scope(Event).where("sport ILIKE ?", "%#{params[:query]}%")
     # elsif params[:sport].present?
