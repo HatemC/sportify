@@ -3,18 +3,19 @@ import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 
 
 const initFlatpickr = () => {
-  flatpickr(".datepickr", {
+  flatpickr(".datepicker", {
     altInput: true,
-    plugins: [new rangePlugin({ input: "#range_end" })]
+    // plugins: [new rangePlugin({ input: "#range_end" })]
   });
 }
 
 
 const initFlatpickr2 = () => {
   flatpickr(".datepicker", {
+  altInput: true,
   });
 }
 
 
 export { initFlatpickr };
-export { initFlatpickr2};
+export { initFlatpickr2 };
