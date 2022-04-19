@@ -12,9 +12,15 @@ before_action :set_booking, only: [:edit, :update, :destroy]
     authorize @booking
 
     if @booking.save!
-      redirect_to dashboard_url, notice: "New booking was created"
-
+      EventChannel.broadcast_to(
+      event,
+      render_to_string(partial: "booking", locals: { booking: @booking })
+    )
+      redirect_to dashboard_url(anchor: "booking-#{@booking.id}")
+    else
+      render "events/show"
     end
+
   end
 
   def edit
