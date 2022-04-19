@@ -5,9 +5,13 @@
       <%=  cl_image_tag event.user.photo.key, class:"avatar-large"  %>
       <% end  %>
 
-  <div class="info-window-content">
-    <p><small><strong>Address: </strong><%= event.address %></small></p>
+  <div class="info-window-content txt-style">
+  <h6><strong><%= event.event_name %> </strong> </h6>
+    <div class="map-info-p">
+    <p><strong>Address: </strong><%= event.address %></p>
     <p><strong>Sport: </strong><%= event.sport %> </p>
     <p><strong>Level: </strong><%= event.level %></p>
+    </div>
+    <%= link_to "Details", event_path(event), class: 'btn btn-ghost' %>
   </div>
 </div>

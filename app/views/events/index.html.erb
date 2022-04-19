@@ -46,7 +46,9 @@
         <% end %>
 
         <div class='txt-style container', data-event-id="<%= event.id %>">
-          <h4><strong>Sport: </strong><%= event.sport %> </h4>
+          <h4><strong><%= event.event_name %> </strong> </h4>
+
+          <p><strong>Sport: </strong><%= event.sport %> </p>
           <p><strong>Level: </strong><%= event.level %> </p>
           <p><strong>Date: </strong><%= event.date %> </p>
           <p><strong>Address: </strong><%= event.address %> </p>
