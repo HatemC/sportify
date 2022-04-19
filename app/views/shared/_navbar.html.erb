@@ -14,13 +14,27 @@
            Welcome <%= current_user.first_name %>
           </li>
 
-          <li class="nav-item active">
-            <%= link_to "Events", events_path, class: "nav-link" %>
+          <li>
+          <div class="search-form-control-nav">
+              <%= form_tag events_path, method: :get do %>
+                <%= text_field_tag :sports,
+                params[:sports],
+                class: "navbar-search",
+                placeholder: "Find a sport"
+                %>
+                <%= submit_tag "Search" %>
+              <% end %>
+            </form>
+          </div>
           </li>
-
+          <li class="nav-item active">
+                <%= link_to events_path do %>
+                <i class="fa-solid fa-magnifying-glass" data-toggle="tooltip" data-placement="bottom" title="Search for a sport"></i>
+                <% end %>
+              </li>
           <li class="nav-item active">
             <%= link_to conversations_path do %>
-            <i class="fa-regular fa-message data-toggle="tooltip" data-placement="bottom" title="My messenger"></i>
+            <i class="fa-regular fa-message" data-toggle="tooltip" data-placement="bottom" title="My messenger"></i>
             <% end %>
           </li>
 
