@@ -4,8 +4,8 @@
     <p>Where athletes meet athletes.</p>
     <div class="search-form-control form-group center">
         <%= form_tag events_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
+      <%= text_field_tag :quiery,
+        params[:quiery],
         class: "form-control",
         placeholder: "Find a sport"
       %>
@@ -19,7 +19,7 @@
 </div>
 <br>
 <div class="container text-center">
-  <h2>Search for a sport:</h2>
+  <h2>Choose your sport:</h2>
 </div>
 <br>
 <div class="container cards">
