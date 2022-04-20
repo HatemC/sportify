@@ -46,14 +46,17 @@
             </div>
             <br>
             <%= @event.description %>
-            <div id="show-button"><%= simple_form_for [@event,@booking] do |f| %>
-              <% if current_user != @event.user  %>
-                <%= f.button :submit, "Book Now", class:'btn btn-primary' %>
-              <% end %>
-            <% end %>
-            </div>
+
         </div>
       </div>
+
+      <div id="show-button"><%= simple_form_for [@event,@booking] do |f| %>
+        <% if current_user != @event.user  %>
+          <%= f.button :submit, "Book Now", class:'btn btn-primary' %>
+        <% end %>
+      <% end %>
+      </div>
+
       <% if @event.user.events.count > 1 %>
         <div class="event-bottom">
           <div id="timeslots">
