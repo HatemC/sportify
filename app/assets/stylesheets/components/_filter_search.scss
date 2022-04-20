@@ -5,7 +5,7 @@
   text-align: center;
   padding: 2px;
   justify-content: center;
-
+  color: #544430;
 }
 
 .form {
@@ -19,18 +19,15 @@
 .form-control {
   width: 100%;
   background-color: white;
-  color: black;
+  color: #544430;;
 }
 
-
 #sport, #level, #range_end, .form-control:disabled, .form-control[readonly] {
-    background-color: white;
-    border: 1px solid gray;
-    height: 45px;
-    margin: 10px;
-    justify-content: center;
-
-
+  background-color: white;
+  border: 1px solid gray;
+  height: 45px;
+  margin: 10px;
+  justify-content: center;
 }
 
 .form-control:disabled, .form-control[readonly] {

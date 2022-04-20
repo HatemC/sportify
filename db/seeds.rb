@@ -27,7 +27,7 @@ users_data['results'].each do |user_data|
     first_name: user_data['name']['first'],
     last_name: user_data['name']['last'],
     email: user_data['email'],
-    address: address.sample + " , Paris, France",
+    address: address.sample + ", Paris, France",
     password: '123456',
     bio: bio
   )
