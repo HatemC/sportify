@@ -30,16 +30,16 @@ margin: 0px;
 }
 
 .profile-container {
-    width: 2845%;
-    margin-left: 5px ;
-    margin-right: -78px ;
-    border: 1px solid rgb(221, 221, 221) ;
-    border-radius: 12px ;
-    max-width: 434px ;
-    padding: 24px ;
-    background-color: white;
-    box-shadow:0 0 15px rgba(0,0,0,0.2);
-
+  width: 2845%;
+  margin-left: 5px ;
+  margin-right: -78px ;
+  border: 1px solid rgb(221, 221, 221) ;
+  border-radius: 12px ;
+  max-width: 434px ;
+  padding: 24px ;
+  background-color: white;
+  box-shadow:0 0 15px rgba(0,0,0,0.2);
+  color: #544430;
 }
 
 .profile-photo {
@@ -62,6 +62,7 @@ margin: 0px;
 }
 
 .event-top {
+  color: #544430;
   display: flex;
   position: relative;
   border-bottom: 1px solid rgb(221, 221, 221) ;
@@ -98,12 +99,11 @@ margin: 0px;
   margin: 20px;
 }
 
-
 .center {
   margin: auto;
 }
 
-h2 {
+h2 p{
   color: #544430;
 }
 

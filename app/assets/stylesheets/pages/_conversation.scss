@@ -20,10 +20,8 @@
   color: white;
 }
 
-
 .btn-message-inline {
 display:flex
-
 }
 
 .conversation-box {
@@ -39,12 +37,12 @@ margin-left: 70px;
 .conv-message-right {
   right: 70px;
   position: absolute;
-
 }
 
 .container-message {
   flex-direction: column;
   margin-top: 10px;
+  color: #544430;
 }
 
 .user-right {
@@ -68,4 +66,5 @@ right: 200px;
 .container-center {
   flex-grow: 1;
   text-align: center;
+  color: #544430;
 }
