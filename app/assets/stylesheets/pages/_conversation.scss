@@ -1,15 +1,22 @@
 .btn-flat-message {
-  color: rgb(4, 70, 4);
+  color: darkslategrey;
   padding: 8px 24px;
-  margin: 1px;
-  width: 120px;
+  margin: 2px;
+  width: 80%;
   border-radius: 4px;
   background: white;
   transition: background 0.3s ease;
+
 }
 
 .btn-flat-message:hover {
-  background: #1BCB7F;
+  background:#FE9602;
+  color: white;
+  padding: auto;
+}
+
+.btn-flat-message:focus{
+  background:#FE9602;
   color: white;
 }
 
@@ -56,4 +63,9 @@ right: 200px;
 
 #zone-content {
   box-sizing: 30px;
+}
+
+.container-center {
+  flex-grow: 1;
+  text-align: center;
 }
