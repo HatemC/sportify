@@ -1,53 +1,70 @@
-<div class="conversation-box" data-controller="add-contact">
-  <div class="contact_box">
-      <h4>My contact</h4>
-      <% current_user.chatrooms.each do |chatroom|  %>
-      <div class="contact-label">
-      <%= link_to chatroom.recepient.first_name, chatroom_path(chatroom), class: "btn btn-flat-message" %>
-      </div>
-      <% end %>
+<div class="chatroom-wrapper" data-controller="add-contact">
 
-      <% current_user.joigned_chatrooms.each do |chatroom|  %>
-      <div class="contact-label">
-      <%= link_to chatroom.sender.first_name, chatroom_path(chatroom), class: "btn btn-flat-message" %>
-      </div>
-      <% end %>
+  <div class="left-align-items">
+    <div><%= link_to "Add Contact", '#', class: 'btn btn-primary btn-contact', "data-action": "click->add-contact#newContact" %></div>
 
-      <%= link_to "New contact", '#', class: 'btn btn-primary btn-contact', "data-action": "click->add-contact#newContact" %>
-
-      <div class="newchat-container d-none", data-add-contact-target="contact">
-      <%= simple_form_for(@chatroom2) do |f| %>
-        <div class="form-body">
+    <div class="new-contact-search d-none", data-add-contact-target="contact">
+    <%= simple_form_for(@chatroom2) do |f| %>
+      <div class="form-body-top">
         <%= f.input :recepient_id,
-          prompt: " Select user ",
-          collection: User.where.not( first_name: @current_user.first_name, last_name: @current_user.last_name)
+            label: false,
+            prompt: " Search a user for a new chat! ",
+            collection: User.where.not( first_name: @current_user.first_name, last_name: @current_user.last_name),
+            class: "search-user-input"
         %>
       </div>
-
-      <div class="btn-inline">
-        <%= f.button :submit, "Create new conversation", class:'btn btn-primary' %>
-      </div>
+      <div><%= f.button :submit, "Chat now", class:'btn btn-primary btn-search-user' %></div>
       <% end %>
-      </div>
+
+    </div>
   </div>
 
-  <div class="container chat-window">
 
-    <h2> Conversation between <%= @chatroom.sender.name %> and <%= @chatroom.recepient.name %></h2>
-    <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-      <% @chatroom.messages.each do |message| %>
-     <%= render 'messages/message', message: message %>
-      <% end %>
+  <div class="conversation-box">
+    <div class="contact_box">
+
+        <div class="center-item"><h4>My contact</h4></div>
+        <% current_user.chatrooms.each do |chatroom|  %>
+        <div class="contact-label">
+        <%= link_to chatroom.recepient.first_name, chatroom_path(chatroom), class: "btn btn-flat-message" %>
+        </div>
+        <% end %>
+
+        <% current_user.joigned_chatrooms.each do |chatroom|  %>
+        <div class="contact-label">
+        <%= link_to chatroom.sender.first_name, chatroom_path(chatroom), class: "btn btn-flat-message" %>
+        </div>
+        <% end %>
+
+
+
     </div>
 
 
-    <%= simple_form_for [ @chatroom, @message ] do |f| %>
-    <%= f.input :content, label: false,  id:'zone-content' %>
-    <div class="btn-message-inline">
-      <%= f.button :submit, "Send", class:'btn btn-primary' %>
-      <% end %>
-      <%# <%= link_to "Contact another player", new_chatroom_path, class: 'btn btn-primary' %>
+
+
+    <div class="container chat-window">
+
+      <h2> Conversation between <%= @chatroom.sender.name %> and <%= @chatroom.recepient.name %></h2>
+      <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+        <% @chatroom.messages.each do |message| %>
+      <%= render 'messages/message', message: message %>
+        <% end %>
+      </div>
+
+
+      <%= simple_form_for [ @chatroom, @message ] do |f| %>
+      <%= f.input :content, label: false,  id:'zone-content' %>
+      <div class="btn-message-inline">
+        <%= f.button :submit, "Send", class:'btn btn-primary' %>
+        <% end %>
+        <%# <%= link_to "Contact another player", new_chatroom_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
     </div>
   </div>
-  </div>
+
+
+
+
 </div>

@@ -1,9 +1,9 @@
 .contact_box {
   width: 20vw;
   height: 80vh;
-  padding-top: 2%;
+  padding-top: 1%;
   margin-left: 10px;
-  padding-left: 2%;
+  padding-inline: auto;
   background-color: #e9ecef;
   border-radius: 10px;
 }
@@ -21,8 +21,34 @@
 
 .contact-label{
   margin-block: 3px;
+  display: flex;
+  justify-content: center;
 }
 
-.newchat-container {
-  margin-top: 10px;
+.center-item {
+  display: flex;
+  justify-content: center;
+}
+
+.left-align-items {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 40px;
+  align-items: flex-start;
+  border: 2px solid #FE9602;
+  width: 95vw;
+}
+
+#message_content {
+  width: 90%;
+}
+
+#new_chatroom {
+  display: flex;
+  justify-content: center;
+  margin-inline: 40px;
+}
+
+.new-contact-search {
+  margin-block-start: 20px;
 }
