@@ -7,36 +7,44 @@
           <div class="form-body">
 
           <%= f.input :event_name,
-            input_html: {class: 'event_name'}
+            input_html: {class: 'event_name'},
+            label: "What would be the name of your event?"
           %>
 
           <%= f.input :sport, prompt: :translate,
             input_html: { class: "styling" },
+            label: "What kind of the sport will it be ?",
             prompt: " Pick a sport! ",
             collection: ['Tennis', 'Football', 'Yoga', 'Soccer', 'Badminton', 'Running']
           %>
           <%= f.input :level,
             input_html: { class: "styling" },
+            label: "What level do you want to play with?",
             prompt: " Pick the level! ",
             collection: ['Beginner', 'Intermediate', 'Advanced']
           %>
 
           <%= f.input :date,
-            input_html: {class: 'datepicker string input'}
+            input_html: {class: 'datepicker string input'},
+            label: "When do you want to play?"
           %>
 
           <%= f.input :duration,
             input_html: { class: "styling" },
+            label: "How long do you want to play?",
             prompt: " How long do you want to play? ",
             collection: ["2 hours", "1 hour", "30 min"]
           %>
 
           <%= f.input :address,
-            input_html: { id: "event_address" }
+            input_html: { id: "event_address" },
+            label: "Where will you host the event?"
           %>
 
           <%= f.input :description,
-            input_html: { id: "description" }
+            input_html: { id: "description" },
+            label: "Say some words to describe the event!"
+
           %>
 
            <%= f.input :photo, as: :file,

@@ -6,7 +6,7 @@
 .cards-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 15px;
   width: 100%;
   margin: auto;
 }
@@ -47,7 +47,7 @@
 }
 .carousel-control-prev,
 .carousel-control-next {
-  background-color: #e1e1e1;
+  background-color: #ffbf00;
   width: 5vh;
   height: 5vh;
   border-radius: 50%;
@@ -63,7 +63,6 @@
 .carousel-card-title {
   font-size: 18px;
   font-weight: bold;
-
 }
 
 #carousel-title h5 {
@@ -92,4 +91,8 @@
 .carousel-card:hover {
   text-decoration: none;
   color: darkgrey;
+}
+
+.carousel-item {
+  width:95%;
 }

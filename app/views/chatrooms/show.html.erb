@@ -36,16 +36,12 @@
         </div>
         <% end %>
 
-
-
     </div>
-
-
 
 
     <div class="container chat-window">
 
-      <h2> Conversation between <%= @chatroom.sender.name %> and <%= @chatroom.recepient.name %></h2>
+      <h2> Message with <%= @chatroom.recepient.name %></h2>
       <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
         <% @chatroom.messages.each do |message| %>
       <%= render 'messages/message', message: message %>
