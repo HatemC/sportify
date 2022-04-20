@@ -30,6 +30,10 @@ before_action :set_booking, only: [:edit, :update, :destroy]
     @booking.update(booking_params)
     authorize @booking
     if @booking.save!
+       EventChannel.broadcast_to(
+      @booking.event,
+      {status: @booking.status}
+    )
       redirect_to dashboard_url, notice: "New booking was updated"
     else
       render :edit

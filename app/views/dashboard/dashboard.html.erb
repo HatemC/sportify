@@ -46,10 +46,10 @@
       <% end %>
 
 
+ <h5>Booking requests <i class="fa-solid fa-bullhorn"></i> for your events
       <% current_user.events.each do |event|  %>
-        <% booking_request = event.bookings.select { |event| !event.status } %>
-         <div class="events" data-event-id="<%= event.id %>">
-        <h5>There are <%= booking_request.count %> new <%='request'.pluralize(booking_request.count) %><i class="fa-solid fa-bullhorn"></i></h5>
+        <% booking_request = event.bookings.select { |booking| !booking.status } %>
+         <div class="events" data-event-id="<%= event.id %>" >
         <% booking_request.each do |request|  %>
           <%= render 'bookings/booking', booking: request, event: event %>
         <% end%>
@@ -82,7 +82,13 @@
             <div><span><%= booking.event.sport %> with <%= booking.event.user.first_name%></span></div>
             <div><span><%= booking.event.date.strftime(' %m-%b-%Y (%a)') %><strong> · </strong>
             <%= booking.event.duration %><strong> · </strong><%= booking.event.level %></span></div>
-            <div class="small-line"><%= booking.status ? 'Status: booked' : 'Status: pending'  %></div>
+
+            <div id="bookAccept" data-booking-id="<%= booking.event.id %>">
+              <div class="dashboard-item" id="booking-<%= booking.id %>">
+               <div class="small-line" id="confirmation-book"><%= booking.status ? 'status: booked' : 'status: pending'  %></div>
+              </div>
+            </div>
+            
           </div>
           <div class="icon-group">
           <div class="icon"><%= link_to '', event_path(booking.event.id), class:'fa-solid fa-magnifying-glass'%></div>
