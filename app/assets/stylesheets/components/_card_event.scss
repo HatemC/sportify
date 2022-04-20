@@ -10,6 +10,9 @@
   padding: 12px;
   margin-top: 0;
 
+  &.highlight {
+    box-shadow: 0 0 0 10px $orange;
+  }
 }
 .txt-style {
   font-size: 12px;
