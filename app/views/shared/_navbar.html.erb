@@ -42,7 +42,7 @@
 
 
           <li>
-            <%= link_to dashboard_path do %>
+            <%= link_to dashboard_path({classbook:"d-none", classevent:"active", classeventtab: "active", classbooktab: " " }) do %>
             <i class="fa-regular fa-calendar" data-toggle="tooltip" data-placement="bottom" title="My dashboard"></i>
             <% end %>
           </li>
@@ -60,7 +60,7 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Add new event", new_event_path , class: "dropdown-item" %>
               <%= link_to "Contact player", new_chatroom_path , class: "dropdown-item" %>
-              <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
+              <%= link_to "Dashboard", dashboard_path({classbook:"d-none", classevent:"active", classeventtab: "active", classbooktab: " " }), class: "dropdown-item" %>
               <%= link_to "Update your profile", edit_user_registration_path , class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>

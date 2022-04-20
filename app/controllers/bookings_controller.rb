@@ -16,7 +16,7 @@ before_action :set_booking, only: [:edit, :update, :destroy]
       event,
       render_to_string(partial: "booking", locals: { booking: @booking })
     )
-      redirect_to dashboard_url(anchor: "booking-#{@booking.id}")
+      redirect_to dashboard_url({classbook:"active", classevent:"d-none", classeventtab: " ", classbooktab: "active" })
     else
       render "events/show"
     end
@@ -34,7 +34,7 @@ before_action :set_booking, only: [:edit, :update, :destroy]
       @booking.event,
       {status: @booking.status}
     )
-      redirect_to dashboard_url, notice: "New booking was updated"
+      redirect_to dashboard_url({classbook:"active", classevent:"d-none", classeventtab: " ", classbooktab: "active" }), notice: "New booking was updated"
     else
       render :edit
     end
@@ -43,7 +43,7 @@ before_action :set_booking, only: [:edit, :update, :destroy]
   def destroy
     authorize @booking
     @booking.destroy
-    redirect_to dashboard_url, notice: "Booking was cancelled"
+    redirect_to dashboard_url({classbook:"active", classevent:"d-none", classeventtab: " ", classbooktab: "active" }), notice: "Booking was cancelled"
   end
 
   private

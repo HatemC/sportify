@@ -46,7 +46,7 @@ class EventsController < ApplicationController
     @event.user = current_user
     authorize @event
     if @event.save!
-      redirect_to dashboard_path, notice: "Your event was created! On fire #{current_user.first_name} !"
+      redirect_to dashboard_path({classbook:"d-none", classevent:"active", classeventtab: "active", classbooktab: " " }), notice: "Your event was created! On fire #{current_user.first_name} !"
     else
       render :new
     end
@@ -60,7 +60,7 @@ class EventsController < ApplicationController
     @event.update(event_params)
 
     if @event.save!
-      redirect_to @event, notice: "Your event was updated "
+      redirect_to dashboard_url({classbook:"d-none", classevent:"active", classeventtab: "active", classbooktab: " " }), notice: "Your event was updated "
     else
       render :edit
     end
@@ -68,7 +68,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    redirect_to dashboard_url, notice: "The event was removed, keep an eye on other new events in Sportify!"
+    redirect_to dashboard_url({classbook:"d-none", classevent:"active", classeventtab: "active", classbooktab: " " }), notice: "The event was removed, keep an eye on other new events in Sportify!"
   end
 
   private
