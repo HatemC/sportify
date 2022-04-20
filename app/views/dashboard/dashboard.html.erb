@@ -45,6 +45,9 @@
       </div>
       <% end %>
 
+<div class="icon-group">
+          <div class="icon"><%= link_to '', new_event_path, class:'fa-solid fa-plus'%> New event</div>
+   </div>
 
  <h5>Booking requests <i class="fa-solid fa-bullhorn"></i> for your events
       <% current_user.events.each do |event|  %>
@@ -88,7 +91,7 @@
                <div class="small-line" id="confirmation-book"><%= booking.status ? 'status: booked' : 'status: pending'  %></div>
               </div>
             </div>
-            
+
           </div>
           <div class="icon-group">
           <div class="icon"><%= link_to '', event_path(booking.event.id), class:'fa-solid fa-magnifying-glass'%></div>
