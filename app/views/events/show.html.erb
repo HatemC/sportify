@@ -46,13 +46,12 @@
             </div>
             <br>
             <%= @event.description %>
-        <div id="show-button"><%= simple_form_for [@event,@booking] do |f| %>
-          <% if current_user != @event.user  %>
-            <%= f.button :submit, "Book Now", class:'btn btn-primary' %>
+          <div id="show-button"><%= simple_form_for [@event,@booking] do |f| %>
+            <% if current_user != @event.user  %>
+              <%= f.button :submit, "Book Now", class:'btn btn-primary' %>
+            <% end %>
           <% end %>
-        <% end %>
-        </div>
-
+          </div>
         </div>
       </div>
 
