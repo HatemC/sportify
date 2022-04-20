@@ -48,8 +48,21 @@
 .btn-contact {
   background-color: white;
   color: #FE9602;
-  margin-top: 20px;
-  margin-inline: auto;
   border-radius: 30px;
   border: 1px solid ;
+  margin-top: 22px;
+}
+
+.label-round-solid {
+  background-color: #54BAB9;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid #54BAB9;
+  margin: 10px;
+  text-align: center;
+  padding: 6px;
+}
+
+.btn-search-user {
+  margin-inline: 3px;
 }

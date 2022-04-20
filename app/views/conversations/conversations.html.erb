@@ -1,29 +1,22 @@
+<%= link_to "Add Contact", '#', class: 'btn btn-primary btn-contact', "data-action": "click->add-contact#newContact" %>
+
+
 <div class="conversation-box">
   <div class="contact_box">
-    <h4>My chatrooms</h4>
+    <div class="center-item"><h4>My contact</h4></div>
     <% current_user.chatrooms.each do |chatroom|  %>
-
-    <%= link_to chatroom.recepient.first_name, chatroom_path(chatroom), class: "btn btn-flat-message" %>
-
-    <br>
+    <div class="center-item"><%= link_to chatroom.recepient.first_name, chatroom_path(chatroom), class: "btn btn-flat-message" %></div>
     <% end %>
 
     <% current_user.joigned_chatrooms.each do |chatroom|  %>
-    <%= link_to chatroom.sender.first_name, chatroom_path(chatroom), class: "btn btn-flat-message" %>
-
-    <br>
+    <div class="center-item"><%= link_to chatroom.sender.first_name, chatroom_path(chatroom), class: "btn btn-flat-message" %></div>
     <% end %>
 
-    <%= link_to "Contact another player", new_chatroom_path, class: 'btn btn-primary btn-contact' %>
-
-
-
-
-  </div>
+      </div>
 
   <div class="container-center">
     <div class="email_pic">
-      <h1> Welcome to your coversations' page</h1>
+      <h1> Discussions</h1>
     </div>
   </div>
 
