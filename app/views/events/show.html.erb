@@ -12,22 +12,22 @@
 
       <div class="profile-text">
         <div class="text-center"><p><strong><%= @event.user.first_name %> <%= @event.user.last_name.upcase %></strong></p></div>
-        <p>About Me: <br><%= @event.user.bio %></p>
-        <% if current_user != @event.user %>
-        <% chatroom_check = Chatroom.where(sender: @event.user, recepient: current_user).or(Chatroom.where(sender: current_user, recepient: @event.user)) %>
-        <% if chatroom_check.empty?%>
-          <%= link_to "Message", chatrooms_path(chatroom: {recepient_id: @event.user.id}), method: :post, class:'btn btn-primary'%>
-        <% else %>
-          <%= link_to "Message", chatroom_path(chatroom_check.first), class:'btn btn-primary'%>
-        <% end %>
-        <% end %>
+        <p><strong>About Me:</strong> <br><%= @event.user.bio %></p>
+        <div id="message-button">
+          <% if current_user != @event.user %>
+          <% chatroom_check = Chatroom.where(sender: @event.user, recepient: current_user).or(Chatroom.where(sender: current_user, recepient: @event.user)) %>
+          <% if chatroom_check.empty?%>
+            <%= link_to "Message", chatrooms_path(chatroom: {recepient_id: @event.user.id}), method: :post, class:'btn btn-primary'%>
+          <% else %>
+            <%= link_to "Message", chatroom_path(chatroom_check.first), class:'btn btn-primary'%>
+          <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
 
     <div class= 'event-container'>
-
       <div class="event-top">
-
         <div>
           <%  if @event.photo.key.nil? %>
             <%= image_tag "placeholder-image.png", crop: :fill,  class: "event-img-vertical-m" %>
@@ -35,55 +35,57 @@
             <%= cl_image_tag @event.photo.key, crop: :fill,  class: "event-img-vertical-m" %>
           <% end  %>
         </div>
-        <div class="event-text">
-          <h4><strong><%= @event.event_name %></strong></h4>
-          <div class="event-description">
-            <%= @event.sport %><strong>  [<%= @event.level %>]</strong><br>
-            <i class="fa-regular fa-heart"></i>
-            <i class="fa-regular fa-calendar"></i><%= @event.date.strftime('%m-%b-%Y (%a)')%>
-            |<i class="fa-regular fa-hourglass"></i><%= @event.duration %><br>
-            <i class="fa-solid fa-location-dot"></i><%= @event.address %></div>
 
-            <div><%= simple_form_for [@event,@booking] do |f| %>
+        <div class="event-text">
+          <h4><strong><%= @event.event_name %>  -  <%= @event.sport %><strong> [<%= @event.level %>]</strong><br> </strong></h4>
+            <div class="event-description">
+              <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-calendar"></i><%= @event.date.strftime('%m-%b-%Y (%a)')%>
+              <i class="fa-regular fa-hourglass"></i><%= @event.duration %>
+              <i class="fa-solid fa-location-dot"></i><%= @event.address %>
+            </div>
+            <br>
+            <%= @event.description %>
+            <div id="show-button"><%= simple_form_for [@event,@booking] do |f| %>
               <% if current_user != @event.user  %>
                 <%= f.button :submit, "Book Now", class:'btn btn-primary' %>
               <% end %>
             <% end %>
-            </div >
+            </div>
         </div>
       </div>
-
-
       <% if @event.user.events.count > 1 %>
         <div class="event-bottom">
-          <% if @event.user.events.where(sport: @event.sport).count > 1%>
+          <div id="timeslots">
+            <% if @event.user.events.where(sport: @event.sport).count > 1%>
               <div>Other timeslot(s): </div>
               <div class="event-group">
-              <div class="label-round-solid"><%= @event.sport %></div>
-              <div class="timeslot-container">
-              <%  @event.user.events.where(sport: @event.sport).each do |event| %>
-                <% unless event.id == params[:id].to_i  %>
-                <%= link_to event.date.strftime('%m-%b-%Y (%a)'),event_path(event.id), class:'btn btn-round-white' %>
+                <div class="label-round-solid"><%= @event.sport %></div>
+                <div class="timeslot-container">
+                  <%  @event.user.events.where(sport: @event.sport).each do |event| %>
+                    <% unless event.id == params[:id].to_i  %>
+                  <%= link_to event.date.strftime('%m-%b-%Y (%a)'),event_path(event.id), class:'btn btn-round-white' %>
+                  <% end %>
                 <% end %>
-              <% end %>
               </div>
             </div>
+          </div>
           <% end %>
-
-        <p>More event hosted by <%= @event.user.first_name %> &#128293</p>
-          <div class="event-group">
-            <% @event.user.events.each do |event|%>
-              <% unless event.id == params[:id].to_i || event.sport == @event.sport%>
-                <div class= "offer-list"><%= link_to event.sport, event_path(event.id), class:"btn btn-round-white" %></div>
+        <br>
+        <div id="more">
+          <p>More event hosted by <%= @event.user.first_name %> &#128293</p>
+            <div class="event-group">
+              <% @event.user.events.each do |event|%>
+                <% unless event.id == params[:id].to_i || event.sport == @event.sport%>
+                  <div class= "offer-list"><%= link_to event.sport, event_path(event.id), class:"btn btn-round-white" %></div>
+                <% end  %>
               <% end  %>
-            <% end  %>
+             </div>
           </div>
         </div>
       <% end %>
       </div>
     </div>
-
+  </div>
     <%= render 'carousel' %>
-
-
 </div>
