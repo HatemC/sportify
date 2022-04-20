@@ -2,23 +2,40 @@
   flex-direction: column;
   margin-top: 10px;
 }
+
+#show-button {
+  margin-left: -157px;
+  margin-top: -38px;
+}
+#message-button {
+  margin-left: 293px;
+  margin-top: 25px;
+}
+
+#more {
+margin: 0px;
+}
+
+#timeslots {
+margin: 0px;
+}
 .section-container {
   display: flex;
   // border: solid;
   // border-color: blue;
-  justify-content: space-around;
+  justify-content:space-evenly;
   margin-top: 30px;
   margin-inline: 90px;
-  margin-bottom: 70px;
+  margin-bottom: 19px;
 }
 
 .profile-container {
-    width: 28%;
+    width: 2845%;
     margin-left: 5px ;
     margin-right: -78px ;
     border: 1px solid rgb(221, 221, 221) ;
     border-radius: 12px ;
-    max-width: 308px ;
+    max-width: 434px ;
     padding: 24px ;
     background-color: white;
     box-shadow:0 0 15px rgba(0,0,0,0.2);
@@ -38,7 +55,7 @@
 .event-container {
   padding: 25px;
   background-color: white;
-  width: 66.6667% !important;
+  width: 54% !important;
   border: 1px solid rgb(221, 221, 221) ;
   border-radius: 12px ;
   box-shadow:0 0 15px rgba(0,0,0,0.2);
@@ -49,24 +66,23 @@
   position: relative;
   border-bottom: 1px solid rgb(221, 221, 221) ;
   border-bottom-width: 80%;
-  padding-bottom: 20px;
+  padding-bottom: 41px;
 }
 
 .event-bottom {
-  margin-top: 20px;
+  margin-top: 19px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .event-group {
   display: flex;
   align-items: center;
+  margin-left: -13px;
 }
 
 .offer-list {
   margin-inline: 12px;
-}
-
-.carousel-container {
-  padding-top: 25px;
 }
 
 .page-title {
