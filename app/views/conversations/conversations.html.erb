@@ -1,6 +1,21 @@
-<%= link_to "Add Contact", '#', class: 'btn btn-primary btn-contact', "data-action": "click->add-contact#newContact" %>
+  <div class="left-align-items" data-controller="add-contact">
+    <div><%= link_to "Add Contact", '#', class: 'btn btn-primary btn-contact', "data-action": "click->add-contact#newContact" %></div>
 
+    <div class="new-contact-search d-none", data-add-contact-target="contact">
+    <%= simple_form_for(@chatroom2) do |f| %>
+      <div class="form-body-top">
+        <%= f.input :recepient_id,
+            label: false,
+            prompt: " Search a user for a new chat! ",
+            collection: User.where.not( first_name: current_user.first_name, last_name: current_user.last_name),
+            class: "search-user-input"
+        %>
+      </div>
+      <div><%= f.button :submit, "Chat now", class:'btn btn-primary btn-search-user' %></div>
+      <% end %>
 
+    </div>
+  </div>
 <div class="conversation-box">
   <div class="contact_box">
     <div class="center-item"><h4>My contact</h4></div>
