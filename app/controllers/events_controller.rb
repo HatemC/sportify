@@ -24,7 +24,7 @@ class EventsController < ApplicationController
     {
       lat: event.latitude,
       lng: event.longitude,
-      infoWindow: render_to_string(partial: "map_info_window", locals: {event: event}),
+      infoWindow: render_to_string(partial: "events/map_box", locals: { event: event }),
       id: event.id
     }
     end
