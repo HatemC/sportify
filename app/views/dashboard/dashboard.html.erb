@@ -95,6 +95,12 @@
 
           </div>
           <div class="icon-group">
+          <% chatroom_check = Chatroom.where(sender: booking.event.user, recepient: current_user).or(Chatroom.where(sender: current_user, recepient: booking.event.user)) %>
+          <% if chatroom_check.empty?%>
+          <div class="icon"><%= link_to '', chatrooms_path(chatroom: {recepient_id: booking.event.user.id}), method: :post, class:'fa-regular fa-message'%></div>
+          <% else %>
+          <div class="icon"><%= link_to '', chatroom_path(chatroom_check.first), class:'fa-regular fa-message'%></div>
+          <% end %>
           <div class="icon"><%= link_to '', event_path(booking.event.id), class:'fa-solid fa-magnifying-glass'%></div>
           <div class="icon"><%= link_to '', booking_path(booking.id), method: :delete, class:"fa-solid fa-trash-can", data: {confirm: "Are you sure to cancel?"} %></div>
           </div>
