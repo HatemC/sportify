@@ -35,6 +35,14 @@
             <%= cl_image_tag @event.photo.key, crop: :fill,  class: "event-img-vertical-m" %>
           <% end  %>
         </div>
+        <div class="book-btn-pos">
+        <div id="show-button"><%= simple_form_for [@event,@booking] do |f| %>
+          <% if current_user != @event.user  %>
+            <%= f.button :submit, "Book Now", class:'btn btn-primary' %>
+          <% end %>
+        <% end %>
+        </div>
+        </div>
 
         <div class="event-text">
           <h4><strong><%= @event.event_name %>  -  <%= @event.sport %><strong> [<%= @event.level %>]</strong><br> </strong></h4>
@@ -46,13 +54,9 @@
             </div>
             <br>
             <%= @event.description %>
-          <div id="show-button"><%= simple_form_for [@event,@booking] do |f| %>
-            <% if current_user != @event.user  %>
-              <%= f.button :submit, "Book Now", class:'btn btn-primary' %>
-            <% end %>
-          <% end %>
-          </div>
         </div>
+
+
       </div>
 
 
