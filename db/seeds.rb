@@ -65,11 +65,11 @@ annie.photo.attach(io: file, filename: 'annie.png', content_type: 'image/png')
 level = ['Beginner', 'Intermediate', 'Advanced']
 sport = ['Tennis', 'Football', 'Yoga', 'Soccer', 'Badminton', 'Running']
 duration = ['1 hour', '2 hour']
-event_name = ['Sport-acholic', 'Summer Workout','Summer body get ready!', 'Morning workout', "Can't stop, won't stop", "Evening Workout", "ENDORPHINS", "Sweat,Sweat,Sweattt!", "Exercise + Dinner", "The Sweat Life", "Breathe, Sweat, Live" ]
-tennis_pic = ["https://cdn.pixabay.com/photo/2021/06/04/06/54/racket-6308994_1280.jpg","https://live-lta.fastcdn.co.uk/globalassets/news/2021/schools-tennis-800x300.jpg?version=91ada2e3", "https://cdn.pixabay.com/photo/2020/11/27/18/59/tennis-5782695__480.jpg", "https://www.usta.com/content/dam/usta/Articles/article-primary/20190411_USTA_RW_2892-socialleagues-1170x585.jpg"]
+event_name = ['Sport-acholic', 'Rain or Shine', 'No Excuses', 'Summer Workout', 'Summer body get ready!', 'Morning workout', "Can't stop, won't stop", "Evening Workout", "ENDORPHINS", "Sweat, Sweat, Sweattt!", "Exercise + Dinner", "The Sweat Life", "Breathe, Sweat, Live"]
+tennis_pic = ["https://cdn.pixabay.com/photo/2021/06/04/06/54/racket-6308994_1280.jpg", "https://live-lta.fastcdn.co.uk/globalassets/news/2021/schools-tennis-800x300.jpg?version=91ada2e3", "https://cdn.pixabay.com/photo/2020/11/27/18/59/tennis-5782695__480.jpg", "https://www.usta.com/content/dam/usta/Articles/article-primary/20190411_USTA_RW_2892-socialleagues-1170x585.jpg"]
 football_pic = ["https://www.imgacademy.com/sites/default/files/styles/scale_1700w/public/2019-11/160_90_photo_shoot_2019_football_m357817.jpg?itok=jtsRrhsN", "https://upload.wikimedia.org/wikipedia/commons/0/02/American_football-Centurions_Nimes_vs_Hurricanes_Montpellier_U17-terrain_La_Bastide.JPG", "https://media.istockphoto.com/photos/man-carrying-ball-avoids-defender-in-recreational-flag-football-game-picture-id1326514135?k=20&m=1326514135&s=612x612&w=0&h=sDReM9nt8sZiNX0an9R0Dctcj8tV67S1eFXQ2clnOJ4="]
 yoga_pic = ["https://i.insider.com/6172edae4f281c001296a1e7?width=700", "https://ak.picdn.net/shutterstock/videos/1017354571/thumb/9.jpg", "https://media.istockphoto.com/photos/women-exercising-in-fitness-studio-yoga-classes-picture-id1162518512?k=20&m=1162518512&s=612x612&w=0&h=bmw0znjI2GkbC9tgDaFSQdsem087084J5aNM-X6iDa0=", "https://media.istockphoto.com/photos/group-of-women-practicing-yoga-ardha-matsyendrasana-pose-picture-id1076946974?k=20&m=1076946974&s=612x612&w=0&h=qc-BGvEUvMxQCfqeCMvw-PAIXNEjLKHCevVXdp-lC0E=" ]
-soccer_pic = [ "https://thumbs.dreamstime.com/b/group-friends-casual-outfit-play-soccer-open-air-people-have-fun-active-rest-scenic-sunset-165209535.jpg","https://previews.123rf.com/images/gstockstudio/gstockstudio1710/gstockstudio171000589/88906357-playful-friends-group-of-young-smiling-people-in-casual-wear-enjoying-nice-summer-day-while-playing-.jpg", "https://www.spookynooksports.com/hubfs/Adult%20Rec%20League%20Soccer.jpg", "https://cvillesocial.com/wp-content/uploads/2017/05/Spring-16-Soccer-Monday-Coed-Casual-Champs-BVB.png", "https://www.vernonmorningstar.com/wp-content/uploads/2017/08/8131737_web1_Co-ed-8.jpg", "https://cdn.pixabay.com/photo/2016/06/15/01/11/soccer-1457988__340.jpg", "https://www.marcadorint.com/wp-content/uploads/2019/11/67125107_2323159601113809_212292468140408832_o.jpg" ]
+soccer_pic = ["https://5.imimg.com/data5/SELLER/Default/2021/1/NB/FA/UH/4275659/small-soccer-ball-500x500.jpg", "https://thumbs.dreamstime.com/b/group-friends-casual-outfit-play-soccer-open-air-people-have-fun-active-rest-scenic-sunset-165209535.jpg","https://previews.123rf.com/images/gstockstudio/gstockstudio1710/gstockstudio171000589/88906357-playful-friends-group-of-young-smiling-people-in-casual-wear-enjoying-nice-summer-day-while-playing-.jpg", "https://www.spookynooksports.com/hubfs/Adult%20Rec%20League%20Soccer.jpg", "https://cvillesocial.com/wp-content/uploads/2017/05/Spring-16-Soccer-Monday-Coed-Casual-Champs-BVB.png", "https://www.vernonmorningstar.com/wp-content/uploads/2017/08/8131737_web1_Co-ed-8.jpg", "https://cdn.pixabay.com/photo/2016/06/15/01/11/soccer-1457988__340.jpg", "https://www.marcadorint.com/wp-content/uploads/2019/11/67125107_2323159601113809_212292468140408832_o.jpg" ]
 badminton_pic = ["https://u-paris.fr/sport/wp-content/uploads/sites/17/2020/06/Badminton-1.jpg", "https://cdn-prod.medicalnewstoday.com/content/images/articles/317/317756/a-group-of-friends-laughing.jpg", "https://img.olympicchannel.com/images/image/private/t_16-9_360-203_2x/f_auto/v1538355600/primary/kfsyzuaoipfhm4qonqci", "https://static.toiimg.com/thumb/msid-83229866,width-1200,height-900,resizemode-4/.jpg"]
 running_pic = ["https://ak.picdn.net/shutterstock/videos/15332308/thumb/1.jpg", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/female-running-friends-royalty-free-image-1642534924.jpg?crop=0.668xw:1.00xh;0.233xw,0&resize=640:*", "https://apexindoorsports.com/wp-content/uploads/2018/06/adultSports.jpg", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/thumbnail-running-01-1492707760.jpg"]
 
@@ -77,10 +77,10 @@ description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e
 
 puts 'Creating 67 new events...'
 
-jennifer_e1 = Event.new(event_name: "Softball Training", sport: 'Football', level: 'Advanced', date: Date.today, duration: '2 hour', description: description)
+jennifer_e1 = Event.new(event_name: "Soccer Training", sport: 'Soccer', level: 'Advanced', date: Date.today, duration: '2 hour', description: description)
 jennifer_e1.user = jennifer
 jennifer_e1.address = jennifer.address
-event_file = URI.open("https://europeansoftball.org/data/articles/1292.jpg")
+event_file = URI.open("https://cronkitenews.azpbs.org/wp-content/uploads/2018/08/gettyheader.jpg")
 jennifer_e1.photo.attach(io: event_file, filename: 'jennifer_e1.png', content_type: 'image/png')
 jennifer_e1.save!
 
@@ -98,7 +98,7 @@ event_file = URI.open("https://media.istockphoto.com/photos/young-woman-practici
 tj_e1.photo.attach(io: event_file, filename: 'tj_e1.png', content_type: 'image/png')
 tj_e1.save!
 
-raoni_e1 = Event.new(event_name: "Sunset Run", sport: 'Running', level: 'Beginner', date: Date.today, duration: '1 hour', description: "Join me for a beautiful sunset run through Paris. We will run through Jardin des Tuileries and finish our run near Trocadéro with a gorgeous view of the Eiffle Tower at sunset. After our run the group likes to enjoy some cheese and wine! Please send me a message if you have any questions! Hope to see you soon :) ")
+raoni_e1 = Event.new(event_name: "Sunset Run", sport: 'Running', level: 'Beginner', date: Date.today, duration: '1 hour', description: "Join me for a beautiful sunset run through Paris. We will run through Jardin des Tuileries and finish our run near Trocadéro with a gorgeous view of the Eiffle Tower at sunset. This event is a great opportunity to explore paris, meet new people and  get in shape for summer. After our run the group likes to grab a drink together! Please send me a message if you have any questions. Hope to see you soon :)")
 raoni_e1.user = raoni
 raoni_e1.address = raoni.address
 event_file = URI.open("https://frenchly.us/wp-content/uploads/sites/9/2018/08/runners-in-paris2.jpg")
@@ -119,7 +119,7 @@ event_file = URI.open("https://images.squarespace-cdn.com/content/v1/5b0e12a8697
 alice_e2.photo.attach(io: event_file, filename: 'alice_e2.png', content_type: 'image/png')
 alice_e2.save!
 
-raoni_e2 = Event.new(event_name: "Yoga & Meditation", sport: 'Yoga', level: 'Intermediate', date: Date.tomorrow, duration: '1 hour', description: description)
+raoni_e2 = Event.new(event_name: "Yoga & Meditation", sport: 'Yoga', level: 'Intermediate', date: Date.tomorrow, duration: '1 hour', description: "Join me for Yoga and Meditation! The power of mindfulness has changed my life and I would love to share what I learned. My yoga event will be very peaceful and slow. We will hold each pose for 5 minutes and focus on our breathe and body. At the end of the session I will lead you on a guided meditation  for 15 minutes. You will leave this session feeling energized and refreshed. The group likes to go out for Indian food after the class to reflect on our experiences.")
 raoni_e2.user = raoni
 raoni_e2.address = raoni.address
 event_file = URI.open("https://media.istockphoto.com/photos/women-in-meditation-while-practicing-yoga-in-a-training-room-happy-picture-id1166417394?k=20&m=1166417394&s=612x612&w=0&h=LK4GrdXUX-I6dfrHsfAzStFOaS1zyRUMuNIx7kD7JtM=")
@@ -140,7 +140,7 @@ event_file = URI.open("https://thumbs.dreamstime.com/b/friends-tennis-court-port
 tj_e2.photo.attach(io: event_file, filename: 'tj_e2.png', content_type: 'image/png')
 tj_e2.save!
 
-annie_e2 = Event.new(event_name: "SOCCER", sport: 'Soccer', level: 'Beginner', date: Date.tomorrow, duration: '1 hour', description: description)
+annie_e2 = Event.new(event_name: "WORLD CUP", sport: 'Soccer', level: 'Beginner', date: Date.tomorrow, duration: '1 hour', description: description)
 annie_e2.user = annie
 annie_e2.address = annie.address
 event_file = URI.open("https://www.soccerbible.com/media/117960/balls-14-min.jpg")
