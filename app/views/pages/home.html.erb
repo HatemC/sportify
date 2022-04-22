@@ -1,11 +1,11 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(<%= asset_url('sportify.jpg')%>);">
   <div class="container text-center">
     <h1>Sportify</h1>
-    <p>Where athletes meet athletes.</p>
+    <p>Where athletes meet athletes</p>
     <div class="search-form-control form-group center">
         <%= form_tag events_path, method: :get do %>
-      <%= text_field_tag :quiery,
-        params[:quiery],
+      <%= text_field_tag :query,
+        params[:query],
         class: "form-control",
         placeholder: "Find a sport"
       %>
